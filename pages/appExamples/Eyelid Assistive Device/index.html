@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conformable Eyelid Assistive Device</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="../../../js/d3DrawIcon.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AngeloFaella/DocumentOutline@1.0/outline.css">
+    <script src="../../../js/DocumentOutline.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="../../../css/media.css" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            background-color: #fdfdfd;
+            font-size: calc(1728vw / 1728);
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            color: #030303;
+            font-size: 4.5rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        li,
+        p {
+            font-family: 'Noto Sans', sans-serif;
+            color: rgba(3, 3, 3, 0.7);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            line-height: 1.6;
+        }
+        
+        sup a {
+            text-decoration: none;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin: 4rem 20rem 0 24rem;">
+        <h1 class="h1StylePTag content" style="margin: 0 0 4rem 0;">
+            Conformable Eyelid Assistive Device
+        </h1>
+
+        <img src="eye.gif" alt="Animated eyelid assistive device in use"
+            style="width: 100%; margin-bottom: 2rem; border-radius: 8px;">
+
+        <p>
+            For individuals with ptosis, a condition where weakened eyelid muscles make it difficult to open their eyes<sup><a href="#ref1">[1]</a></sup>, current assistive tools present a difficult choice. Eyelid crutches and tapes can provide support, but they often restrict the natural, essential motion of blinking. To address this, we've designed a conformable assistive device that provides the necessary lifting force to the eyelid while preserving the freedom to blink naturally.
+        </p>
+
+        <p style="margin-top: 1rem;">
+            The device's Kirigami-inspired structure is soft and flexible in its resting state, exerting minimal force and allowing the eyelid to close without interference. When inflated, the structure gently contracts, providing a steady lifting force that helps raise the eyelid and ease the effort of opening the eyes. This innovative design not only assists with vision but also doubles as a rehabilitation tool. By providing gentle resistance during natural blinking, it helps strengthen the eyelid muscles over time, offering both immediate support and long-term therapeutic benefits.
+        </p>
+
+        <h2 style="margin: 6rem 0 2rem 0;">References</h2>
+        <ol>
+            <li id="ref1" style="font-size: 0.9rem;">
+                Finsterer, J. (2003). Ptosis: causes, presentation, and management. <i>Aesthetic Plastic Surgery, 27</i>(3), 193–204.
+            </li>
+        </ol>
+
+        <div style="margin-top: 10rem;"></div>
+    </div>
+
+    <script>
+        if (typeof drawIcon === 'function') {
+            drawIcon(50 * (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 1728, "icon", false, false);
+        }
+    </script>
+
+    <script>
+        if (typeof DocumentOutline === 'function') {
+            let outline = new DocumentOutline({
+                backgroundColor: '#2c2c2c',
+                textColor: 'white',
+                textColorLight: 'lightgrey',
+                accentColor: '#858585',
+                defaultOpen: false
+            });
+            if (typeof d3 !== 'undefined') {
+                d3.select(".outline-nav").style("z-index", "99");
+            }
+        }
+    </script>
+</body>
+
+</html>

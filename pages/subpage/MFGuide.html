@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanism and Fabrication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="../../js/d3DrawIcon.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AngeloFaella/DocumentOutline@1.0/outline.css">
+    <script src="../../js/DocumentOutline.js"></script>
+
+    <link rel="preconnect" href="httpshttps://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            background-color: #fdfdfd;
+            font-size: calc(1728vw / 1728);
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            color: #030303;
+            font-size: 4.5rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .h1StylePTag {
+            font-family: 'DM Serif Display', serif;
+            color: #030303;
+            font-size: 4.5rem;
+            margin: 0;
+        }
+
+        .h2StylePTag {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        .h3StylePTag {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        li,
+        p {
+            font-family: 'Noto Sans', sans-serif;
+            color: rgba(3, 3, 3, 0.7);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        a {
+            font-family: 'Noto Sans', sans-serif;
+            color: rgba(229, 30, 243, 0.7);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        figcaption {
+            font-family: 'Noto Sans', sans-serif;
+            color: rgba(3, 3, 3, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        div.btn-container {
+            display: flex;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        div.btn-container i {
+            display: inline-block;
+            position: relative;
+            top: -9px;
+        }
+
+        label {
+            font-size: 13px;
+            color: #424242;
+            font-weight: 500;
+        }
+
+        .btn-color-mode-switch {
+            display: inline-block;
+            margin: 0px;
+            position: relative;
+        }
+
+        .btn-color-mode-switch>label.btn-color-mode-switch-inner {
+            margin: 0px;
+            width: 8rem;
+            height: 2rem;
+            background: #E0E0E0;
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            /*box-shadow: 0px 0px 8px 0px rgba(17, 17, 17, 0.34) inset;*/
+            display: block;
+        }
+
+        .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+            content: attr(data-on);
+            position: absolute;
+            font-size: 0.8rem;
+            font-family: 'ZCOOL XiaoWei';
+            top: 0.3rem;
+            right: 1.2rem;
+
+        }
+
+        .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+            content: attr(data-off);
+            width: 4rem;
+            height: 1.6rem;
+            background: #fff;
+            border-radius: 2rem;
+            position: absolute;
+            left: 0.2rem;
+            top: 0.2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            box-shadow: 0px 0px 6px -2px #111;
+            font-family: 'ZCOOL XiaoWei';
+            padding: .1rem 0px;
+        }
+
+        .btn-color-mode-switch>.alert {
+            display: none;
+            background: #FF9800;
+            border: none;
+            color: #fff;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"] {
+            cursor: pointer;
+            width: 4rem;
+            height: 1.6rem;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            margin: 0px;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner {
+            background: #3b3b3b;
+            color: #fff;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
+            content: attr(data-on);
+            left: 3.8rem;
+            background: #5d5d5d;
+        }
+
+        .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
+            content: attr(data-off);
+            right: auto;
+            left: 20px;
+        }
+
+        /* .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner {
+            background: #66BB6A;
+            color: #fff;
+        } */
+
+        .btn-color-mode-switch input[type="checkbox"]:checked~.alert {
+            display: block;
+        }
+
+        /* header 锚泊咯 */
+        .glassmorphismHeader {
+            background: rgba(249, 249, 249, 0.6);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 99;
+        }
+
+        @media (max-width: 768px) {
+
+            li,
+            p {
+
+                font-size: 2.4rem;
+                margin-bottom: 0.8rem;
+            }
+
+            h3 {
+                font-size: 3.2rem;
+            }
+
+            h5 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            li,
+            p {
+
+                font-size: 2rem;
+                margin-bottom: 0.6rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            h5 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin: 6rem 20rem 0 24rem;">
+        <p class="h1StylePTag content" data-lan="en" data-en="Step-by-step Guide" style="margin: 0 0 4rem 0;">
+            Mechanism and Fabrication</p>
+        <p class="content">This guide will walk you through the process of understanding the underlying mechanisms, designing, and fabricating KiriInflate structures – a novel type of inflatable that leverages Kirigami cuts for dynamic shape-changing interactions. KiriInflate combines the ease of use and widespread availability of film inflatables with precise laser fabrication, creating structures with large contraction, tunable stretchability, and versatile morphing capabilities.</p>
+        <h2 class="content" style="margin: 2rem 0;">Understand How It
+            Works</h2>
+
+        <p>KiriInflate's unique behavior stems from the interplay of its two primary structural elements: heat-sealed air channels and Kirigami-inspired slits.</p>
+
+        <ul>
+            <li>Heat Sealing Traces: These form the sealed air chambers. Upon inflation, the expansion of these channels is constrained by the surrounding sealed regions, forcing the material to contract sideways and transform from a flat 2D surface into a compact 3D structure.</li>
+            <li>Kirigami Slits: Embedded within the film, these precisely cut patterns segment the continuous film into truss-like units. They remove movement restrictions between adjacent air channels, allowing them to slide, rotate, and even overlap during inflation. This significantly enhances the overall contraction and provides tunable elasticity.</li>
+        </ul>
+
+        <p>Together, these elements allow for:</p>
+        <ul>
+            <li>Active Contraction: Inflation-driven, generating forces for significant shrinkage.</li>
+            <li>Passive Stretching: When external forces are applied, the inflated structure resists deformation like a soft spring, with its elastic resistance tunable by adjusting internal air pressure.</li>
+        </ul>
+        <img src="../../resources/img/Mechanism and Fabrication/Figure- active-actuation-passive-stretch.gif" alt="Active actuation and passive stretch demonstration"
+            style="width: 100%; margin: 2rem 0;">
+
+
+        <h2 style="margin: 6rem 0 2rem 0;">
+            Materials Preparation</h2>
+        <p>KiriInflate primarily utilizes PE (Polyethylene) electrostatic adhesive films due to their excellent properties for this fabrication method: Accessibility - Widely available and cost-effective; Optical Transparency - Allows for visual inspection and aesthetic applications; Ultrathin Profile - Enables fine-resolution structures; Strong Electrostatic Adhesion - Crucial for the single-step cutting and sealing process.</p>
+        <p>While PE film is the primary choice, the proposed structures are also compatible with other fabrication methods and materials, such as TPU-coated nylon, for scenarios requiring higher elasticity and stronger force feedback.</p>
+
+        <h2 class="content" style="margin: 2rem 0;">Fabricating a KiriInflate</h2>
+
+        <p>The fabrication of KiriInflate structures is a rapid, precise, and accessible process, leveraging a standard laser cutter.</p>
+        <img src="../../resources/img/Mechanism and Fabrication/Fabricating a KiriInflate.png" alt="Fabrication workflow" style="width: 100%; margin-bottom: 2rem;">
+
+
+        <h3 style="margin: 2rem 0 1rem 0;">Step 1: Material Preparation</h3>
+        <p>Prepare a double-layer or multi-layer plastic film from the roll, specifically PE (Polyethylene) electrostatic adhesive films that exhibit automatic adhesion due to electrostatic attraction. This electrostatic cling is key to the single-pass cutting and sealing fabrication process.</p>
+        <p>Tips:</p>
+        <ul>
+            <li>Ensure you peel off two or more layers together to prevent air bubbles from forming between the layers.</li>
+            <li>For small-sized inflatables, thinner materials (e.g., 0.03 mm) are recommended. For larger-sized inflatables, thicker materials (e.g., 0.1 mm) are recommended.</li>
+        </ul>
+        <img src="../../resources/img/Mechanism and Fabrication/film preparation.gif" alt="Film preparation"
+            style="width: 100%; margin: 2rem 0;">
+
+
+        <h3 style="margin: 2rem 0 1rem 0;">Step 2: Laser Cutting & Heat welding</h3>
+        <p>The core of the KiriInflate fabrication. A standard laser cutting machine simultaneously cuts and heat-seals the edges of the inflatable in a single pass. This unique method ensures ultra-narrow seals (down to 0.04 mm) and high alignment, critical for intricate internal slit patterns.</p>
+        <ul>
+            <li>Simultaneous Cut & weld: Higher laser power settings are used to achieve both cutting and heat welding.</li>
+            <li>Heat Welding Only: Lower power settings can be used to only heat-seal along a path without cutting, useful for creating multi-layer air chambers.</li>
+        </ul>
+        <img src="../../resources/img/Mechanism and Fabrication/laser-cut.gif" alt="Laser cutting and welding"
+            style="width: 100%; margin: 2rem 0;">
+            
+        <h3 style="margin: 2rem 0 1rem 0;">Step 3: Inflation</h3>
+        <p>Once fabricated, the KiriInflate structure quickly shrinks and deforms upon inflation. The presence of the Kirigami cuts allows for significantly greater tensile elasticity and unique morphing behaviors.</p>
+
+        <h2 style="margin: 6rem 0 2rem 0;">Laser Parameters & Cross-Scale Fabrication Tips:</h2>
+        <p>The fabrication parameters of laser cutter (Power, Focal Length, Speed) vary depending on the material thickness and whether you aim for simultaneous cut-and-seal or heat-weld-only.</p>
+        <ul>
+            <li>Material Thickness: KiriInflate supports cross-scale fabrication, from sub-millimeter to sub-meter widths, accommodating various film thicknesses (e.g., 0.03 mm to 0.2 mm). Thinner materials require lower power settings to prevent excessive widening of cut seams.</li>
+            <li>Seal Width: The width of the heat-sealed edge is a critical design parameter influencing deformation, mechanical strength, and durability. Wider seams are typically required for thicker materials and large-scale inflatables with wide air columns to ensure adequate fusion depth and pressure resistance.</li>
+        </ul>  
+        <p>Sample fabrication parameters:</p>
+        <p>The laser cutter used in the demonstration is Laserbox 2.0 (MLP-K503-40W).</p>
+        
+        <a href="../subpage/appExamples.html">
+            <h5 style="margin: 2rem 0 1rem 0;">Link to Application Examples Page</h5>
+        </a>
+
+        <!-- ====== REPLACED: insert Paper Reference section here (replaces the previous empty spacer div) ====== -->
+        <div style="margin-top: 6rem; padding-top: 3rem; border-top: 1px solid #ccc;">
+            <h2 style="margin-bottom: 1.5rem; font-family: 'DM Serif Display', serif;">Paper Reference</h2>
+
+            <p style="font-family: 'Noto Sans', sans-serif; color: rgba(3,3,3,0.8); font-size: 0.95rem; line-height: 1.6rem; max-width: 64rem;">
+                <strong>ACM Reference Format:</strong><br>
+                Yue Yang, Chuang Chen, Yulu Chen, Ge Gao, Lei Ren, Bolan Yao, Lingyun Sun, Ye Tao, and Guanyun Wang. 2025. KiriInflate: Fabricating Cross-Scale Inflatables with Large Contraction and Tunable Stretchability for Tangible Interaction. In The 38th Annual ACM Symposium on User Interface Software and Technology (UIST '25), September 28–October 01, 2025, Busan, Republic of Korea. ACM, New York, NY, USA, 15 pages. https://doi.org/10.1145/3746059.3747766
+               
+            </p>
+
+            <div style="margin-top: 1.5rem;">
+                <a href="https://dl.acm.org/doi/10.1145/3746059.3747766"
+                    target="_blank" rel="noopener noreferrer"
+                    style="display:inline-block; background-color:#007bff; color:white; padding:10px 22px; border-radius:8px; font-family:'Noto Sans',sans-serif; font-weight:600; margin-right:1rem; text-decoration:none;">
+                    View DOI Page
+                </a>
+
+                <a href="https://kiriinflate.github.io/pages/subpage/KiriInflate_UIST25.pdf"
+                    target="_blank" rel="noopener noreferrer"
+                    style="display:inline-block; background-color:#28a745; color:white; padding:10px 22px; border-radius:8px; font-family:'Noto Sans',sans-serif; font-weight:600; text-decoration:none;">
+                    Download PDF
+                </a>
+            </div>
+        </div>
+        <!-- ====== end Paper Reference section ====== -->
+
+    </div>
+
+    <script>
+        drawIcon(50 * (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 1728, "icon", false, false);
+    </script>
+
+    <script>
+        let outline = new DocumentOutline({
+            backgroundColor: '#2c2c2c',
+            textColor: 'white',
+            textColorLight: 'lightgrey',
+            accentColor: '#858585',
+            defaultOpen: false
+        });
+        d3.select(".outline-nav")
+            .style("z-index", "99")
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiriInflate Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        html, body { background-color: #fdfdfd; font-size: calc(1728vw / 1728); }
+        h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: #030303; margin: 0; }
+        h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #030303; margin: 0; }
+        .divToggle { margin: 4rem 18rem 0 18rem; }
+        .L-box { width: 100%; display: flex; flex-wrap: wrap; justify-content: flex-start; }
+        
+        /* --- MODIFIED CARD STYLES START --- */
+        .L-card {
+            background-color: #F1F1F1;
+            width: calc(33.3333333% - 20px);
+            margin-top: 30px;
+            border-radius: 30px;
+            margin-right: 20px;
+            box-sizing: border-box;
+            height: auto; /* Changed: Height is now flexible */
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .L-card img {
+            width: 100%; /* Changed: Fills container width */
+            height: 14rem; /* Set a consistent height for the image area */
+            object-fit: cover; /* Added: Prevents image stretching and crops to fit */
+            border-radius: 20px; /* Added: Rounds the corners of the image */
+            margin: 0 auto;
+        }
+        .L-card h3 {
+            margin-top: 1.2rem; /* Adjusted margin */
+            font-size: 1.4rem; /* Changed: Reduced font size */
+            font-weight: bold;
+        }
+        /* --- MODIFIED CARD STYLES END --- */
+
+        .L-box>.L-card:nth-child(3n) { margin-right: 0; }
+        @media (max-width: 768px) {
+             .divToggle { margin: 4rem 10rem 0 10rem; }
+            .L-card { width: calc(50% - 20px); }
+             .L-box>.L-card:nth-child(3n) { margin-right: 20px; }
+            .L-box>.L-card:nth-child(2n) { margin-right: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="divToggle">
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;">
+                <h2>Primitives</h2>
+                <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;">
+            </div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card" onclick="router('../library/Primitives/index.html')">
+                    <img src="../../resources/img/library/primitive.png" alt="Primitives">
+                    <h3>Primitives</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="divToggle">
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;">
+                <h2>Array</h2>
+                <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;">
+            </div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card" onclick="router('../library/Array_Fully_Connected/index.html')">
+                    <img src="../../resources/img/library/Array – Fully Connected_icon.png" alt="Array – Fully Connected">
+                    <h3>Array Fully Connected</h3>
+                </div>
+                <div class="L-card" onclick="router('../library/Array_Partially_Connected/index.html')">
+                    <img src="../../resources/img/library/Array – Partially Connected_icon.png" alt="Array – Partially Connected">
+                    <h3>Array Partially Connected</h3>
+                </div>
+                <div class="L-card" onclick="router('../library/Array_Disconnected/index.html')">
+                    <img src="../../resources/img/library/Array – Disconnected_icon.png" alt="Array – Disconnected">
+                    <h3>Array Disconnected</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="divToggle">
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;">
+                <h2>Nonuniform Channel</h2>
+                <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;">
+            </div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card" onclick="router('../library/Nonuniform_Channel_Vertically_Graded/index.html')">
+                    <img src="../../resources/img/library/Nonuniform Channel-Vertically Graded_icon.png" alt="Nonuniform Channel-Vertically Graded">
+                    <h3>Vertically Graded</h3>
+                </div>
+                <div class="L-card" onclick="router('../library/Nonuniform_Channel_Asymmetric_Side_Slit/index.html')">
+                    <img src="../../resources/img/library/Nonuniform Channel – Asymmetric Side Slit_icon.png" alt="Nonuniform Channel – Asymmetric Side Slit">
+                    <h3>Asymmetric Side Slit</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="divToggle">
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;">
+                <h2>Curved Pattern</h2>
+                <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;">
+            </div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card" onclick="router('../library/Curved_Pattern_Parallel_Wavy_Line_Surface/index.html')"><img src="../../resources/img/library/Parallel Wavy Line Surface_icon.png" alt="Parallel Wavy Line Surface"><h3>Parallel Wavy Line Surface</h3></div>
+                <div class="L-card" onclick="router('../library/Curved_Pattern_Tween_Curve_Surface/index.html')"><img src="../../resources/img/library/Tween Curve Surface_icon.png" alt="Tween Curve Surface"><h3>Tween Curve Surface</h3></div>
+                <div class="L-card" onclick="router('../library/Curved_Pattern_Mirrored_Tween_Curve_Surface/index.html')"><img src="../../resources/img/library/Mirrored Tween Curve Surface_icon.png" alt="Mirrored Tween Curve Surface"><h3>Mirrored Tween Curve Surface</h3></div>
+                <div class="L-card" onclick="router('../library/Curved_Pattern_Bulging_Waveform_Surface/index.html')"><img src="../../resources/img/library/Bulging Waveform Surface_icon .png" alt="Bulging Waveform Surface"><h3>Bulging Waveform Surface</h3></div>
+                <div class="L-card" onclick="router('../library/Curved_Pattern_Single_Bulging_Wave_Line_1/index.html')"><img src="../../resources/img/library/Curved Pattern – Single Bulging Wave Line 1_icon.png" alt="Single Bulging Wave Line 1"><h3>Single Bulging Wave Line 1</h3></div>
+                <div class="L-card" onclick="router('../library/Curved_Pattern_Single_Bulging_Wave_Line_2/index.html')"><img src="../../resources/img/library/Curved Pattern – Single Bulging Wave Line 2_icon.png" alt="Single Bulging Wave Line 2"><h3>Single Bulging Wave Line 2</h3></div>
+                <div class="L-card" onclick="router('../library/Curved_Pattern_Single_Wavy_Line/index.html')"><img src="../../resources/img/library/Single Wavy Line_icon.png" alt="Single Wavy Line"><h3>Single Wavy Line</h3></div>
+            </div>
+        </div>
+
+        <div class="divToggle">
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;">
+                <h2>3D Structure with Strechability</h2>
+                <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;">
+            </div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card" onclick="router('../library/3D_Structure_with_Strechability_Radial_Slit/index.html')"><img src="../../resources/img/library/3D Structure with Strechability – Radial Slit_icon.png" alt="Radial Slit"><h3>Radial Slit</h3></div>
+                <div class="L-card" onclick="router('../library/3D_Structure_with_Strechability_Concentric_Circular_Slit/index.html')"><img src="../../resources/img/library/3D Structure with Strechability – Concentric Circular Slit_icon.png" alt="Concentric Circular Slit"><h3>Concentric Circular Slit</h3></div>
+                <div class="L-card" onclick="router('../library/3D_Structure_with_Strechability_Y_Shaped_Slit/index.html')"><img src="../../resources/img/library/3D Structure with Strechability – Y-Shaped Slit_icon.png" alt="Y-Shaped Slit"><h3>Y-Shaped Slit</h3></div>
+            </div>
+        </div>
+
+        <div class="divToggle">
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;">
+                <h2>Dynamic Hollow Pattern</h2>
+                <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;">
+            </div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card" onclick="router('../library/Dynamic_Hollow_Pattern_Triangular_Star_Channel/index.html')"><img src="../../resources/img/library/Dynamic Hollow Pattern – Triangular Star Channel_icon.png" alt="Triangular Star Channel"><h3>Triangular Star Channel</h3></div>
+                <div class="L-card" onclick="router('../library/Dynamic_Hollow_Pattern_Quadrilateral_Star_Channel/index.html')"><img src="../../resources/img/library/Dynamic Hollow Pattern – Quadrilateral Star Channel_icon.png" alt="Quadrilateral Star Channel"><h3>Quadrilateral Star Channel</h3></div>
+            </div>
+        </div>
+
+        <div style="margin: 12rem 0 0 0;"></div>
+    </div>
+
+    <script>
+        function router(url) {
+            window.location.href = url;
+        }
+        function detailItem(obj) {
+            var content = $(obj).parent().find(".divToggleContent");
+            var icon = $(obj).find(".moreLessIcon");
+            if (content.is(":hidden")) {
+                content.slideDown(500);
+                icon.attr("src", "../../resources/img/icons/lessIcon.png");
+            } else {
+                content.slideUp(500);
+                icon.attr("src", "../../resources/img/icons/moreIcon.png");
+            }
+        }
+    </script>
+</body>
+</html>

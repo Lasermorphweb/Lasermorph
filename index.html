@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiriInflate: A rapid and accessible method for fabricating cross-scale inflatables with large contraction and tunable stretchability, enabling innovative, tangible interactions.
+    </title>
+    <meta property="og:title" content="KiriInflate - A rapid and accessible method for fabricating cross-scale inflatables with large contraction and tunable stretchability, enabling innovative, tangible interactions.">
+    <meta property="og:locale" content="en_US">
+    <link rel="canonical" href="https://KiriInflate.github.io">
+    <meta property="og:url" content="https://KiriInflate.github.io">
+    <meta property="og:site_name" content="KiriInflate">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="./js/d3DrawIcon.js"></script>
+
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            background-color: #fdfdfd;
+            font-size: calc(1728vw / 1728);
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            color: white;
+            font-size: 4.5rem;
+            margin: 0;
+        }
+
+        h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: white;
+            margin: 0;
+
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .h3StylePTag {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: white;
+            margin: 0;
+
+            position: relative;
+        }
+
+        h3::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        h3:hover::after {
+            transform: scaleX(1);
+        }
+
+        p {
+            font-family: 'Noto Sans', sans-serif;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .img-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-container img {
+            max-height: 130%;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+        }
+
+        .row,
+        .col {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .custom {
+            padding: 0 12rem;
+        }
+
+        .title {
+            font-size: 8rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+        }
+
+        .mgb1rem {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .mgb1rem {
+                margin-bottom: 2rem;
+            }
+
+            .custom {
+                padding: 0;
+            }
+
+            .title {
+                font-size: 18rem;
+                /* 移动端字体大小 */
+            }
+
+            .subtitle {
+                font-size: 3.6rem;
+            }
+
+            h3 {
+                font-size: 4rem;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .mgb1rem {
+                margin-bottom: 1.8rem;
+            }
+
+            .custom {
+                padding: 0;
+            }
+
+            .title {
+                font-size: 16rem;
+                /* 更小屏幕的移动端字体大小 */
+            }
+
+            .subtitle {
+                font-size: 2.4rem;
+            }
+
+            h3 {
+                font-size: 3.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row"
+        style="background: url(resources/img/Home.gif);background-size: cover;background-repeat: no-repeat;">
+        <div style="display: flex; align-items: center; height: 100%;">
+            <div class="custom">
+                <div style="margin-bottom: 4rem;">
+                    <h1 class="title mgb1rem" style="text-align: center; ">KiriInflate</h1>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <p class="subtitle" style="width: 72%; text-align: center;">A rapid and accessible method for fabricating cross-scale inflatables with large contraction and tunable stretchability, enabling innovative, tangible interactions. </p>
+                    </div>
+
+                </div>
+                <div style="display: flex; flex-direction: column; align-items:center;">
+                    <div style="display: flex; " class="mgb1rem">
+                        <a href="pages/subpage/MFGuide.html">
+                            <h3>Mechanism and Fabrication</h3>
+                        </a>
+                        <!-- <img src="resources/svg/rightArrow.svg" alt="" style="width: 2rem;"> -->
+                    </div>
+                    <div style="display: flex; " class="mgb1rem">
+                        <a href="pages/subpage/library.html">
+                            <h3>Library and Design Tool</h3>
+                        </a>
+                        <!-- <img src="resources/svg/rightArrow.svg" alt="" style="width: 2rem;"> -->
+                    </div>
+                    <div style="display: flex; " class="mgb1rem">
+                        <a href="pages/subpage/appExamples.html">
+                            <h3>Application Examples</h3>
+                        </a>
+                        <!-- <img src="resources/svg/rightArrow.svg" alt="" style="width: 2rem;"> -->
+                    </div>
+
+                  
+                    <!-- <div style="display: flex; " class="mgb1rem">
+                            <a href="pages/subpage/sampleProj.html">
+                                <h3>Search</h3>
+                            </a>
+                            <img src="resources/svg/rightArrow.svg" alt="" style="width: 2rem;">
+                        </div> -->
+                    <!-- <div style="display: flex; " class="mgb1rem">
+                            <a href="pages/subpage/FAQ.html">
+                                <h3>FAQ</h3>
+                            </a>
+                            <img src="resources/svg/rightArrow.svg" alt="" style="width: 2rem;">
+                        </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+        drawIcon(50 * (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 1728, "icon", false, false);
+        github.onclick = function () {
+            // console.log(1)
+            // alert("Due to the ongoing double-blind peer review process, detailed information for this project is not publicly available at this time.")
+            window.location.href = "https://github.com/TH-Wood/TH-Wood.github.io";
+        }
+    </script>
+
+</body>
+
+</html>
