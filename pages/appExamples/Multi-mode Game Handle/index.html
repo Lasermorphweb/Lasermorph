@@ -1,96 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-mode Game Handle</title>
+    <title>Tangible Interface Collection</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v6.js"></script>
     <script src="../../../js/d3DrawIcon.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AngeloFaella/DocumentOutline@1.0/outline.css">
-    <script src="../../../js/DocumentOutline.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link href="../../../css/media.css" rel="stylesheet">
-
+    <link href="../../../css/site-structure.css" rel="stylesheet">
     <style>
-        html,
-        body {
-            background-color: #fdfdfd;
-            font-size: calc(1728vw / 1728);
-        }
-
-        h1 {
-            font-family: 'DM Serif Display', serif;
-            color: #030303;
-            font-size: 4.5rem;
-            margin: 0;
-        }
-
-        li,
-        p {
-            font-family: 'Noto Sans', sans-serif;
-            color: rgba(3, 3, 3, 0.7);
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
-            line-height: 1.6;
-        }
+        html, body { background-color: #fdfdfd; font-size: calc(1728vw / 1728); }
+        h1, h2, h3 { font-family: 'DM Serif Display', serif; color: #030303; }
+        h1 { font-size: 4.5rem; margin: 0; }
+        h2 { font-size: 2.5rem; margin: 0; }
+        h3 { font-size: 1.5rem; margin: 0; }
+        p, li { font-family: 'Noto Sans', sans-serif; color: rgba(3,3,3,0.72); font-size: 1rem; line-height: 1.65; }
+        .meta { color: rgba(3,3,3,0.9); margin-bottom: 0.9rem; }
+        .shot img { width: 100%; border-radius: 10px; display: block; }
+        .case-block { margin: 4rem 0; }
     </style>
 </head>
-
 <body>
-    <div style="margin: 4rem 20rem 0 24rem;">
-        <h1 class="h1StylePTag content" style="margin: 0 0 4rem 0;">
-            Multi-mode Game Handle
-        </h1>
+    <header class="site-topnav">
+        <div class="site-topnav-inner">
+            <a class="site-brand" href="../../../index.html">KiriInflate</a>
+            <nav class="site-nav-links">
+                <a href="../../../index.html">Home</a>
+                <a href="../../../pages/subpage/MFGuide.html">Mechanism</a>
+                <a href="../../../pages/subpage/library.html">Library</a>
+                <a class="active" href="../../../pages/subpage/appExamples.html">Applications</a>
+                <a href="../../../pages/subpage/github.html">Github</a>
+            </nav>
+        </div>
+    </header>
+    <div style="margin: 2rem 20rem 0 24rem;">
+        <h1 style="margin: 0 0 4rem 0;">Tangible Interfaces</h1>
+        <p>This collection gathers interface-oriented applications in which the material's swelling, softness, translucency, and repeated deformation become interaction resources. The emphasis is on tangible response, environmental activation, and physical feedback rather than only geometric form.</p>
 
-        <img src="sense.gif" alt="Animated multi-mode game handle"
-            style="width: 100%; margin-bottom: 2rem; border-radius: 8px;">
+        <section class="case-block">
+            <h2>Rain-after-Nature UI</h2>
+            <div class="row shot g-3" style="margin-bottom: 1.5rem;">
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Rain-after-nature UI placeholder"></div>
+            </div>
+            <p>This concept imagines a post-rain natural interface in which the material responds to moisture and changing environmental conditions. The case is positioned as a higher-priority future direction for turning water-triggered transformation into perceivable interface events.</p>
+        </section>
 
-        <p>
-            Using KiriInflate, we've engineered an interactive game handle that blurs the line between virtual action and physical sensation. This controller uses integrated tactile feedback and multi-zone sensing to create a deeply immersive gaming experience.
-        </p>
+        <section class="case-block">
+            <h2>Translucent Lampshade</h2>
+            <p class="meta"><strong>Reference</strong></p>
+            <div class="row shot g-3" style="margin-bottom: 1.5rem;">
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Breathable Lamps.png" alt="Translucent lampshade reference"></div>
+                <div class="col-md-6"><img src="lamp.gif" alt="Translucent lampshade motion placeholder"></div>
+            </div>
+            <p>This direction explores how swelling geometry and light transmission can be combined to create soft luminaires whose volumetric form, texture, and optical diffusion change with activation. It extends the project toward ambient interaction and responsive lighting scenarios.</p>
+        </section>
 
-        <p style="margin-top: 1rem;">
-            The handle's multi-layer design features three independent air chambers. When a game requires a left or right action, the corresponding upper chamber inflates, causing the handle to physically contract on that side. This dynamic haptic feedback intuitively prompts the player to press the adjacent function button, which is coated with conductive graphene for reliable touch input.
-        </p>
+        <section class="case-block">
+            <h2>Beach Toys</h2>
+            <p class="meta"><strong>Reference</strong></p>
+            <div class="row shot g-3" style="margin-bottom: 1.5rem;">
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Eyelid Assistive Device.png" alt="Beach toy reference 1"></div>
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Dynamic Elbow Brace.png" alt="Beach toy reference 2"></div>
+            </div>
+            <p>This direction considers toys that are compressed for transport and activated on-site by water. The interface opportunity lies not only in the toy object itself but also in the paired display or guidance screen that explains states, activation, and play behaviors.</p>
+        </section>
 
-        <p style="margin-top: 1rem;">
-            The lower main chamber serves a dual purpose. When inflated, it provides a powerful contraction for global feedback effects. When stretched by the player, it activates a pre-installed graphene circuit, detecting the displacement to simulate actions like firing a weapon. This transforms the entire handle into a responsive, multi-modal input device.
-        </p>
+        <section class="case-block">
+            <h2>Tactile Compression Interaction</h2>
+            <p class="meta"><strong>Reference</strong></p>
+            <div class="row shot g-3" style="margin-bottom: 1.5rem;">
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Breathable Lamps.png" alt="Tactile compression reference 1"></div>
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Tactile compression reference 2"></div>
+            </div>
+            <p>This case studies squeeze-based tangible interaction, where different tactile resistance states, shapes, or deformation patterns can be linked to real-time audiovisual responses. It frames the material as an input surface rather than only a static prototype.</p>
+
+            <h3>Tactile Xylophone</h3>
+            <p>One branch of this direction is a tactile xylophone, where different squeeze zones map to different sound and visual feedback. The concept uses material deformation as a direct expressive control channel.</p>
+            <div class="row shot g-3">
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Dynamic Elbow Brace.png" alt="Tactile xylophone placeholder"></div>
+            </div>
+        </section>
+
+        <section class="case-block">
+            <h2>Watering Interaction and Mapping</h2>
+            <p>This ongoing direction explores how watering actions and projection or mapped visualization could be combined. It points toward staged activation, data display, or public demonstration setups in which water becomes both the trigger and the content of interaction.</p>
+        </section>
+
+        <section class="case-block">
+            <h2>Button Interaction</h2>
+            <p>This direction focuses on soft buttons, deformable knobs, and other pressable control elements. It explores how the material can deliver gentle tactile response, visible shape change, and repeatable mechanical behavior in interface-like control components.</p>
+            <div class="row shot g-3">
+                <div class="col-md-6"><img src="sense.gif" alt="Button interaction placeholder 1"></div>
+                <div class="col-md-6"><img src="../../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Button interaction placeholder 2"></div>
+            </div>
+        </section>
 
         <div style="margin-top: 10rem;"></div>
     </div>
-
     <script>
         if (typeof drawIcon === 'function') {
             drawIcon(50 * (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 1728, "icon", false, false);
         }
     </script>
-
-    <script>
-        if (typeof DocumentOutline === 'function') {
-            let outline = new DocumentOutline({
-                backgroundColor: '#2c2c2c',
-                textColor: 'white',
-                textColorLight: 'lightgrey',
-                accentColor: '#858585',
-                defaultOpen: false
-            });
-            if (typeof d3 !== 'undefined') {
-                d3.select(".outline-nav").style("z-index", "99");
-            }
-        }
-    </script>
 </body>
-
 </html>

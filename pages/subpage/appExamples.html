@@ -12,6 +12,8 @@
 
     <script src="https://d3js.org/d3.v6.js"></script>
     <script src="../../js/d3DrawIcon.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AngeloFaella/DocumentOutline@1.0/outline.css">
+    <script src="../../js/DocumentOutline.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,10 +34,37 @@
             margin: 0;
         }
 
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
         h3 {
             font-family: 'DM Serif Display', serif;
             font-size: 1.5rem;
-            font-weight: bold;
+            color: #030303;
+            margin: 0;
+        }
+
+        h4 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        h5 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        h6 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 0.9rem;
             color: #030303;
             margin: 0;
         }
@@ -46,14 +75,36 @@
             font-size: 4.5rem;
             margin: 0;
         }
-        
+
+        .h2StylePTag {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
+        .h3StylePTag {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #030303;
+            margin: 0;
+        }
+
         a, a:hover {
             text-decoration: none;
             color: inherit;
         }
 
+        li,
+        p {
+            font-family: 'Noto Sans', sans-serif;
+            color: rgba(3, 3, 3, 0.7);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
         .main {
-            margin: 4rem 18rem 0 18rem;
+            margin: 2rem 20rem 0 24rem;
         }
 
         .app-card {
@@ -73,16 +124,84 @@
         .app-card img {
             border-radius: 5px;
         }
+        .app-subtitle {
+            font-family: 'DM Serif Display', serif;
+            color: #030303;
+            font-size: 2.5rem;
+            margin: 0 0 1.2rem 0;
+            border-bottom: 2px solid rgba(3,3,3,0.15);
+            padding-bottom: 0.4rem;
+        }
+        .app-subsubtitle {
+            font-family: 'DM Serif Display', serif;
+            color: #030303;
+            font-size: 1.5rem;
+            margin: 0 0 0.8rem 0;
+        }
+        .app-section {
+            margin-bottom: 3.5rem;
+        }
+        .app-entry {
+            margin-bottom: 2rem;
+        }
+        .app-entry-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.35rem;
+            color: #030303;
+            margin: 0.8rem 0 0 0;
+            text-align: center;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 253, 253, 0.92);
+            border-bottom: 1px solid rgba(3, 3, 3, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .topbar-inner {
+            margin: 0 6rem;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .topbar-brand {
+            font-family: 'DM Serif Display', serif;
+            color: #030303;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        .topbar-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .topbar-nav a {
+            text-decoration: none;
+            color: rgba(3,3,3,0.75);
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+        }
+        .topbar-nav a.active,
+        .topbar-nav a:hover {
+            color: #030303;
+            border-bottom-color: #030303;
+        }
 
         @media (max-width: 992px) {
             .main {
-                margin: 4rem 10rem 0 10rem;
+                margin: 2rem 10rem 0 10rem;
             }
         }
 
         @media (max-width: 768px) {
             .main {
-                margin: 4rem 4rem 0 4rem;
+                margin: 2rem 4rem 0 4rem;
             }
             .h1StylePTag {
                 font-size: 3.5rem;
@@ -90,62 +209,216 @@
              h3 {
                 font-size: 1.2rem;
             }
+            .topbar-inner { margin: 0 2.5rem; }
+            .topbar-nav a { font-size: 1.8rem; }
         }
     </style>
 </head>
 
 <body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="topbar-brand" href="../../index.html">KiriInflate</a>
+            <nav class="topbar-nav">
+                <a href="../../index.html">Home</a>
+                <a href="./MFGuide.html">Mechanism</a>
+                <a href="./library.html">Library</a>
+                <a class="active" href="./appExamples.html">Applications</a>
+                <a href="./github.html">Github</a>
+            </nav>
+        </div>
+    </header>
     <div class="main">
         <p class="h1StylePTag" style="margin: 0 0 6rem 0;">
             Application Examples
         </p>
 
         <div class="container-fluid">
-            <div class="row">
-
-                <div class="col-lg-6 mb-5">
-                    <a href="../appExamples/Breathable Lamps/index.html">
-                        <div class="app-card">
-                            <img src="../../resources/img/applicationExamples/Breathable Lamps.png" alt="Breathable Lamps" class="img-fluid">
-                            <h3 class="text-center mt-3">Breathable Lamps</h3>
-                        </div>
-                    </a>
+            <section class="app-section content" id="tangible-interfaces">
+                <h2 class="app-subtitle">Tangible Interfaces</h2>
+                <div class="row">
+                    <div class="col-lg-6 app-entry content" id="rain-ui">
+                        <h3 class="app-subsubtitle">Rain-after-Nature UI</h3>
+                        <a href="../appExamples/Multi-mode Game Handle/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Multi-mode Game Handle" class="img-fluid">
+                                <p class="app-entry-title">Tangible Interface Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="soft-buttons-knobs">
+                        <h3 class="app-subsubtitle">Button Interaction</h3>
+                        <a href="../appExamples/Multi-mode Game Handle/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Multi-mode Game Handle" class="img-fluid">
+                                <p class="app-entry-title">Tangible Interface Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="tactile-compression">
+                        <h3 class="app-subsubtitle">Tactile Compression</h3>
+                        <a href="../appExamples/Multi-mode Game Handle/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Multi-mode Game Handle" class="img-fluid">
+                                <p class="app-entry-title">Tangible Interface Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="translucent-lampshade">
+                        <h3 class="app-subsubtitle">Translucent Lampshade</h3>
+                        <a href="../appExamples/Multi-mode Game Handle/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Breathable Lamps.png" alt="Breathable Lamps" class="img-fluid">
+                                <p class="app-entry-title">Tangible Interface Collection</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
 
-                <div class="col-lg-6 mb-5">
-                    <a href="../appExamples/Dynamic Elbow Brace/index.html">
-                        <div class="app-card">
-                            <img src="../../resources/img/applicationExamples/Dynamic Elbow Brace.png" alt="Dynamic Elbow Brace" class="img-fluid">
-                            <h3 class="text-center mt-3">Dynamic Elbow Brace</h3>
-                        </div>
-                    </a>
+            <section class="app-section content" id="rapid-prototypes">
+                <h2 class="app-subtitle">Rapid Prototypes</h2>
+                <div class="row">
+                    <div class="col-lg-6 app-entry content" id="time-saving-series">
+                        <h3 class="app-subsubtitle">Mouse Wrist Rest</h3>
+                        <a href="../appExamples/Dynamic Elbow Brace/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Dynamic Elbow Brace.png" alt="Dynamic Elbow Brace" class="img-fluid">
+                                <p class="app-entry-title">Rapid Prototype Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="mouse-wrist-rest">
+                        <h3 class="app-subsubtitle">Helmet</h3>
+                        <a href="../appExamples/Dynamic Elbow Brace/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Dynamic Elbow Brace.png" alt="Dynamic Elbow Brace" class="img-fluid">
+                                <p class="app-entry-title">Rapid Prototype Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="headset">
+                        <h3 class="app-subsubtitle">Product Brochure Improvement</h3>
+                        <a href="../appExamples/Eyelid Assistive Device/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Eyelid Assistive Device.png" alt="Eyelid Assistive Device" class="img-fluid">
+                                <p class="app-entry-title">Enhanced Sponge Uses</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
 
-                <div class="col-lg-6 mb-5">
-                    <a href="../appExamples/Eyelid Assistive Device/index.html">
-                        <div class="app-card">
-                            <img src="../../resources/img/applicationExamples/Eyelid Assistive Device.png" alt="Eyelid Assistive Device" class="img-fluid">
-                            <h3 class="text-center mt-3">Eyelid Assistive Device</h3>
-                        </div>
-                    </a>
+            <section class="app-section content" id="sustainable-cases">
+                <h2 class="app-subtitle">Sustainable Cases</h2>
+                <div class="row">
+                    <div class="col-lg-6 app-entry content" id="reduced-sponge">
+                        <h3 class="app-subsubtitle">Space-saving Shaped Packaging</h3>
+                        <a href="../appExamples/Sustainable Cases/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Breathable Lamps.png" alt="Breathable Lamps" class="img-fluid">
+                                <p class="app-entry-title">Sustainable Application Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="hermit-crab-aquatic-life">
+                        <h3 class="app-subsubtitle">Hermit Crab Habitat</h3>
+                        <a href="../appExamples/Sustainable Cases/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Breathable Lamps.png" alt="Breathable Lamps" class="img-fluid">
+                                <p class="app-entry-title">Sustainable Application Collection</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
 
-                <div class="col-lg-6 mb-5">
-                    <a href="../appExamples/Multi-mode Game Handle/index.html">
-                         <div class="app-card">
-                            <img src="../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Multi-mode Game Handle" class="img-fluid">
-                            <h3 class="text-center mt-3">Multi-mode Game Handle</h3>
-                        </div>
-                    </a>
+            <section class="app-section content" id="enhanced-sponge-uses">
+                <h2 class="app-subtitle">Enhanced Sponge Uses</h2>
+                <div class="row">
+                    <div class="col-lg-6 app-entry content" id="dual-material-sponge-block">
+                        <h3 class="app-subsubtitle">Dual-material Sponge Block</h3>
+                        <a href="../appExamples/Eyelid Assistive Device/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Eyelid Assistive Device.png" alt="Eyelid Assistive Device" class="img-fluid">
+                                <p class="app-entry-title">Enhanced Sponge Uses</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="perforated-sponge">
+                        <h3 class="app-subsubtitle">3D Bath Sponge</h3>
+                        <a href="../appExamples/Eyelid Assistive Device/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Eyelid Assistive Device.png" alt="Eyelid Assistive Device" class="img-fluid">
+                                <p class="app-entry-title">Enhanced Sponge Uses</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="memory-postcard">
+                        <h3 class="app-subsubtitle">Tactile Memory Postcard</h3>
+                        <a href="../appExamples/Eyelid Assistive Device/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Multi-mode Game Handle" class="img-fluid">
+                                <p class="app-entry-title">Enhanced Sponge Uses</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="mortise-tenon-box">
+                        <h3 class="app-subsubtitle">Mortise-and-tenon Storage Box</h3>
+                        <a href="../appExamples/Eyelid Assistive Device/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Dynamic Elbow Brace.png" alt="Dynamic Elbow Brace" class="img-fluid">
+                                <p class="app-entry-title">Enhanced Sponge Uses</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
 
-            </div>
+            <section class="app-section content" id="art-expression">
+                <h2 class="app-subtitle">Art & Expression</h2>
+                <div class="row">
+                    <div class="col-lg-6 app-entry content" id="poster-prototyping">
+                        <h3 class="app-subsubtitle">Physical Poster Design</h3>
+                        <a href="../appExamples/Breathable Lamps/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Breathable Lamps.png" alt="Breathable Lamps" class="img-fluid">
+                                <p class="app-entry-title">Art & Expression Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 app-entry content" id="symbol-element-design">
+                        <h3 class="app-subsubtitle">Logic Symbol Elements</h3>
+                        <a href="../appExamples/Breathable Lamps/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/applicationExamples/Multi-mode Game Handle.png" alt="Multi-mode Game Handle" class="img-fluid">
+                                <p class="app-entry-title">Art & Expression Collection</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 
     <script>
         if (typeof drawIcon === 'function') {
             drawIcon(50 * (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) / 1728, "icon", false, false);
+        }
+    </script>
+    <script>
+        if (typeof DocumentOutline === 'function') {
+            let outline = new DocumentOutline({
+                backgroundColor: '#2c2c2c',
+                textColor: 'white',
+                textColorLight: 'lightgrey',
+                accentColor: '#858585',
+                defaultOpen: false,
+                maxDepth: 3
+            });
+            if (typeof d3 !== 'undefined') {
+                d3.select(".outline-nav").style("z-index", "99");
+            }
         }
     </script>
 </body>

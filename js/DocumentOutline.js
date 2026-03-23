@@ -19,12 +19,16 @@ let DocumentOutline;
          * @param {String} [options.accentColor] accent color of the outline
          * @param {String} [options.textColorLight] text color of the sub sections
          * @param {String} [options.defaultOpen] indicate the initial mode of the outline. Outline is open by default on desktop and closed on mobile.
+         * @param {Number} [options.maxDepth=3] maximum heading depth shown in the outline
          */
-        constructor({backgroundColor, textColor, textColorLight, accentColor, defaultOpen}={}){
+        constructor({backgroundColor, textColor, textColorLight, accentColor, defaultOpen, maxDepth=3}={}){
             this._headingMap = [];
             this._parentList = [];
             this._isMobile = window.innerWidth < 780; // mobile & tablet
             this._open = !this._isMobile;
+            this._maxDepth = maxDepth;
+            this._rootHeadingLevel = 1;
+            this._maxHeadingLevel = this._rootHeadingLevel + this._maxDepth - 1;
 
             // set :root variables
             let root = document.documentElement;
@@ -44,14 +48,22 @@ let DocumentOutline;
                 this._open = defaultOpen;
             }
 
-            // get heading tags
-            const headingList = document.querySelectorAll("h1, h2, h3, h4, h5, h6")
-            headingList.forEach(tag => {
-                this._headingMap.push({
-                    tag,
-                    level: Number(tag.tagName[1])
-                })
-            });
+            // get heading tags (limited to max outline depth)
+            const headingList = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+            if(headingList.length){
+                // Use the first visible heading as the root of the outline tree,
+                // then keep only `maxDepth` levels from that root.
+                const rootLevel = Number(headingList[0].tagName[1]);
+                const maxLevel = rootLevel + this._maxDepth - 1;
+                this._rootHeadingLevel = rootLevel;
+                this._maxHeadingLevel = maxLevel;
+                headingList.forEach(tag => {
+                    const level = Number(tag.tagName[1]);
+                    if(level <= maxLevel){
+                        this._headingMap.push({ tag, level });
+                    }
+                });
+            }
 
             this._buildOutline();
             this._renderOutline();
@@ -173,13 +185,20 @@ let DocumentOutline;
             if(!this._open)
                 this.hideOutline();
 
-            // add to DOM 
-            document.body.removeChild(document.body.childNodes[0]);
+            // add to DOM
+            // Keep existing page-level UI (e.g., sticky top bar) by moving all current
+            // body children into the main document container instead of dropping the first node.
             this._main.setAttribute('id','main-document');
             this._nav.appendChild(this._root);
+
+            const originalNodes = Array.from(document.body.childNodes);
+            originalNodes.forEach(node => {
+                this._main.appendChild(node);
+            });
+
             document.body.appendChild(this._main);
-            this._main.appendChild(document.body.childNodes[0])
             document.body.appendChild(this._nav);
+            this._enforceMaxDepthInDOM();
 
             if(this._isMobile || !this._open){
                 this._main.appendChild(this._menuMobile);
@@ -208,6 +227,22 @@ let DocumentOutline;
                 let svg = document.querySelector('.outline-mobile-menu-icon-container svg');
                 if(svg) svg.classList.add('outline-mobile-menu-icon');
             }
+        }
+
+        _enforceMaxDepthInDOM = () => {
+            // Hard cap: remove any rendered entry deeper than configured max level.
+            const titles = Array.from(this._nav.querySelectorAll('.li-content'));
+            titles.forEach(node => {
+                const match = Array.from(node.classList)
+                    .map(c => c.match(/^li-title-(\d)$/))
+                    .find(Boolean);
+                if(!match) return;
+                const level = Number(match[1]);
+                if(level > this._maxHeadingLevel){
+                    const li = node.closest('li');
+                    if(li) li.remove();
+                }
+            });
         }
 
         /**
