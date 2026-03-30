@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TENFOLD SPONGE Library</title>
+    <title>LaserMorph Design Space</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -14,44 +14,64 @@
         h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: #030303; margin: 0; }
         h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #030303; margin: 0; }
         .divToggle { margin: 2rem 18rem 0 18rem; }
-        .L-box { width: 100%; display: flex; flex-wrap: wrap; justify-content: flex-start; }
+        .L-box { width: 100%; display: flex; flex-wrap: wrap; gap: 25px; align-items: flex-start; margin-top: 25px; }
         .L-subtitle { width: 100%; font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #030303; margin: 1.2rem 0 0.2rem 0; }
         .L-subsubtitle { width: 100%; font-family: 'Noto Sans', sans-serif; font-size: 1rem; color: rgba(3,3,3,0.75); margin: 0.8rem 0 0.1rem 0.2rem; }
-        .L-card { background-color: #F1F1F1; width: calc(33.3333333% - 20px); margin-top: 30px; border-radius: 30px; margin-right: 20px; box-sizing: border-box; display: flex; flex-direction: column; padding: 20px; cursor: pointer; text-align: center; }
-        .L-card img { width: 100%; height: 14rem; object-fit: cover; border-radius: 20px; margin: 0 auto; }
+        .L-card { background-color: #000; flex: 1 1 280px; min-width: 280px; max-width: 400px; margin-bottom: 0; border-radius: 20px; box-sizing: border-box; display: flex; flex-direction: column; padding: 15px; cursor: pointer; text-align: center; }
+        .L-card img { width: 100%; height: 240px; object-fit: contain; border-radius: 15px; background: #000; }
+        .L-card h3 { color: #fff; }
+        .L-card h3 { margin-top: 12px; font-size: 1.3rem; font-weight: bold; }
         .L-card h3 { margin-top: 1.2rem; font-size: 1.4rem; font-weight: bold; }
-        .L-box>.L-card:nth-child(3n) { margin-right: 0; }
         .topbar { position: sticky; top: 0; z-index: 100; background: rgba(253, 253, 253, 0.92); border-bottom: 1px solid rgba(3, 3, 3, 0.15); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
         .topbar-inner { margin: 0 6rem; padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; }
         .topbar-brand { font-family: 'DM Serif Display', serif; color: #030303; font-size: 1.5rem; text-decoration: none; }
         .topbar-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
         .topbar-nav a { text-decoration: none; color: rgba(3,3,3,0.75); font-family: 'Noto Sans', sans-serif; font-size: 0.95rem; border-bottom: 2px solid transparent; }
         .topbar-nav a.active, .topbar-nav a:hover { color: #030303; border-bottom-color: #030303; }
-        @media (max-width: 768px) { .divToggle { margin: 2rem 10rem 0 10rem; } .L-card { width: calc(50% - 20px); } .L-box>.L-card:nth-child(3n) { margin-right: 20px; } .L-box>.L-card:nth-child(2n) { margin-right: 0; } .topbar-inner { margin: 0 2.5rem; } .topbar-nav a { font-size: 1.8rem; } }
+        @media (max-width: 1200px) { .L-card { min-width: 250px; } }
+        @media (max-width: 768px) { .divToggle { margin: 2rem 10rem 0 10rem; } .L-card { min-width: 220px; } .topbar-inner { margin: 0 2.5rem; } .topbar-nav a { font-size: 1.8rem; } }
+        @media (max-width: 480px) { .L-card { min-width: 100%; flex: 1 1 100%; } }
     </style>
 </head>
 <body>
-    <header class="topbar"><div class="topbar-inner"><a class="topbar-brand" href="../../index.html">TENFOLD SPONGE</a><nav class="topbar-nav"><a href="../../index.html">Home</a><a href="./MFGuide.html">Mechanism</a><a class="active" href="./library.html">Library</a><a href="./appExamples.html">Applications</a><a href="./github.html">Github</a></nav></div></header>
+    <header class="topbar"><div class="topbar-inner"><a class="topbar-brand" href="../../index.html">LaserMorph</a><nav class="topbar-nav"><a href="../../index.html">Home</a><a href="./MFGuide.html">Mechanism</a><a class="active" href="./library.html">Design Space</a><a href="./appExamples.html">Applications</a><a href="./github.html">Github</a></nav></div></header>
     <div>
         <div class="divToggle">
-            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Morphology</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
-            <div class="divToggleContent L-box" style="display: none;"><p class="L-subtitle">Geometric</p><div class="L-card" onclick="router('../library/Primitives/index.html')"><img src="../../resources/img/library/primitive.png" alt="Design Space"><h3>Design Space</h3></div><p class="L-subtitle">Parametric</p><div class="L-card" onclick="router('../library/Primitives/index.html')"><img src="../../resources/img/library/primitive.png" alt="Design Space"><h3>Design Space</h3></div></div>
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Shapes</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card"><img src="../../resources/img/level0.png" alt="Level 0: Surface Slopes"><h3>Level 0: Surface Slopes</h3></div>
+                <div class="L-card"><img src="../../resources/img/level1.png" alt="Level 1: Single Bends"><h3>Level 1: Single Bends</h3></div>
+                <div class="L-card"><img src="../../resources/img/level2.png" alt="Level 2: Complex Curves"><h3>Level 2: Complex Curves</h3></div>
+                <div class="L-card"><img src="../../resources/img/level3.png" alt="Level 3: Volumetric Shapes"><h3>Level 3: Volumetric Shapes</h3></div>
+            </div>
         </div>
         <div class="divToggle">
-            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Process</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
-            <div class="divToggleContent L-box" style="display: none;"><p class="L-subtitle">Modularization</p><div class="L-card" onclick="router('../library/Primitives/index.html')"><img src="../../resources/img/library/primitive.png" alt="Design Space"><h3>Design Space</h3></div><p class="L-subtitle">Multi-face Cutting</p><div class="L-card" onclick="router('../library/Primitives/index.html')"><img src="../../resources/img/library/primitive.png" alt="Design Space"><h3>Design Space</h3></div></div>
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Scalability</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card"><img src="../../resources/img/singlesided.png" alt="Single-sided"><h3>Single-sided</h3></div>
+                <div class="L-card"><img src="../../resources/img/doublesided.png" alt="Double-sided"><h3>Double-sided</h3></div>
+                <div class="L-card"><img src="../../resources/img/sideplane.png" alt="Side-plane"><h3>Side-plane</h3></div>
+                <div class="L-card"><img src="../../resources/img/sixsided.png" alt="Six-sided"><h3>Six-sided</h3></div>
+                <div class="L-card"><img src="../../resources/img/horizontal joining.png" alt="Horizontal Joining"><h3>Horizontal Joining</h3></div>
+                <div class="L-card"><img src="../../resources/img/vertical joining.png" alt="Vertical Joining"><h3>Vertical Joining</h3></div>
+            </div>
         </div>
         <div class="divToggle">
-            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Precision</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
-            <div class="divToggleContent L-box" style="display: none;"><p class="L-subsubtitle">Min Height</p><div class="L-card" onclick="router('../library/Primitives/index.html')"><img src="../../resources/img/library/primitive.png" alt="Design Space"><h3>Design Space</h3></div><p class="L-subsubtitle">Surface Precision</p><div class="L-card" onclick="router('../library/Primitives/index.html')"><img src="../../resources/img/library/primitive.png" alt="Design Space"><h3>Design Space</h3></div></div>
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Resolution</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
+            <div class="divToggleContent L-box" style="display: none;">
+                <div class="L-card"><img src="../../resources/img/veritical precision.png" alt="Vertical Precision"><h3>Vertical Precision</h3></div>
+                <div class="L-card"><img src="../../resources/img/surfacequality.png" alt="Surface Quality"><h3>Surface Quality</h3></div>
+                <div class="L-card"><img src="../../resources/img/structurallimits.png" alt="Structural Limits"><h3>Structural Limits</h3></div>
+                <div class="L-card"><img src="../../resources/img/typography.png" alt="Typography"><h3>Typography</h3></div>
+            </div>
         </div>
         <div class="divToggle">
-            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Deformation</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
-            <div class="divToggleContent L-box" style="display: none;"><div class="L-card" onclick="router('../library/Primitives/index.html')"><img src="../../resources/img/library/primitive.png" alt="Design Space"><h3>Design Space</h3></div></div>
+            <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Morphing</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
+            <div class="divToggleContent L-box" style="display: none;"><div class="L-card"><img src="../../resources/img/morphing.png" alt="Morphing"><h3>Morphing</h3></div></div>
         </div>
         <div class="divToggle" style="margin-bottom: 6rem;">
             <div class="divHeader" onclick="detailItem(this)" style="display: flex; align-items: center; border-bottom: 3px solid #030303; justify-content: space-between; padding-bottom: 20px; cursor: pointer;"><h2>Design Tool</h2><img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle" style="width: 4rem; margin-right: 3rem;"></div>
-            <div class="divToggleContent L-box" style="display: none;"><div class="L-card" onclick="router('../library/Dynamic_Hollow_Pattern_Triangular_Star_Channel/index.html')"><img src="../../resources/img/library/Dynamic Hollow Pattern â€?Triangular Star Channel_icon.png" alt="Design Tool UI"><h3>Design Tool UI</h3></div></div>
+            <div class="divToggleContent L-box" style="display: none;"><div class="L-card" onclick="router('../library/Dynamic_Hollow_Pattern_Triangular_Star_Channel/index.html')"><img src="../../resources/img/designtool.png" alt="Design Tool UI"><h3>Design Tool UI</h3></div></div>
         </div>
     </div>
     <script>
