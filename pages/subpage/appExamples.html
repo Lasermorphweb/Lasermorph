@@ -16,6 +16,7 @@
         h4 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: #030303; margin: 0; }
         p, li { font-family: 'Noto Sans', sans-serif; color: rgba(3, 3, 3, 0.7); font-size: 1rem; margin-bottom: 0.3rem; }
         .main { margin: 2rem 20rem 0 24rem; }
+        a { text-decoration: none; }
         .app-card {
             background-color: #000;
             padding: 15px;
@@ -24,7 +25,9 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
+        .app-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
         .app-card img { width: 100%; height: 220px; object-fit: contain; border-radius: 15px; background: #000; }
         .app-entry-title { color: #fff; font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin: 12px 0 0 0; text-align: center; font-weight: bold; }
         .app-entry-desc { color: rgba(255,255,255,0.8); font-family: 'Noto Sans', sans-serif; font-size: 0.9rem; line-height: 1.5; margin-top: 10px; text-align: left; }
@@ -37,6 +40,7 @@
         .app-subsubtitle { font-family: 'DM Serif Display', serif; color: #030303; font-size: 1.5rem; margin: 0 0 0.8rem 0; }
         .app-section { margin-bottom: 3.5rem; }
         .app-category { margin-bottom: 2rem; }
+        .category-desc { font-family: 'Noto Sans', sans-serif; color: rgba(3,3,3,0.75); font-size: 1.05rem; line-height: 1.7; margin: 0 0 1.5rem 0; }
         .topbar {
             position: sticky; top: 0; z-index: 100;
             background: rgba(253, 253, 253, 0.92);
@@ -74,30 +78,37 @@
             <!-- 1. Rapid Prototyping -->
             <section class="app-section">
                 <h2 class="app-subtitle">Rapid Prototyping</h2>
+                <p class="category-desc">lasermorph supports rapid product and spatial prototyping by converting flat laser-coded sheets into volumetric forms with short fabrication cycles, lightweight transportation, and low storage burden. In desktop-scale studies, it substantially reduces production time compared with FDM while still maintaining robustness under compression, handling, and repeated hydration. In large-scale studies, modular tiling, mortise-and-tenon assembly, and vertical stacking extend fabrication beyond the size limits of a single machine, making the workflow suitable for both hand-sized products and macro-scale spatial models. The key contribution of this category is that it treats expansion not as a secondary material side effect, but as a controllable design resource that links 2D coding directly to 3D manifestation.</p>
                 
                 <div class="app-category">
                     <h3 class="app-subsubtitle">Architectural and Urban Modeling</h3>
                     <div class="app-grid">
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Architectural and Urban Modeling/fm_Kimbell Art Museum0.JPG" alt="Kimbell Art Museum">
-                                <p class="app-entry-title">Kimbell Art Museum</p>
-                                <p class="app-entry-desc">Architectural rapid prototyping using laser-cut cellulose sponge.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Architectural and Urban Modeling/Kimbell Art Museum/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Architectural and Urban Modeling/fm_Kimbell Art Museum0.JPG" alt="Kimbell Art Museum">
+                                    <p class="app-entry-title">Kimbell Art Museum</p>
+                                    <p class="app-entry-desc">Large-scale architectural modeling demonstrating planar subdivision, mortise-and-tenon assembly, and Z-axis stacking for macro-scale models.</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Architectural and Urban Modeling/Splicing Cities_fm.JPG" alt="Splicing Cities">
-                                <p class="app-entry-title">Splicing Cities</p>
-                                <p class="app-entry-desc">Urban modeling prototype showcasing modular city assembly.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Architectural and Urban Modeling/Splicing Cities/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Architectural and Urban Modeling/Splicing Cities_fm.JPG" alt="Splicing Cities">
+                                    <p class="app-entry-title">Splicing Cities</p>
+                                    <p class="app-entry-desc">Urban-scale modular modeling with decomposed terrain and building units for updateable planning sandboxes.</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Architectural and Urban Modeling/Vertical building_fm.JPG.png" alt="Vertical Building">
-                                <p class="app-entry-title">Vertical Building</p>
-                                <p class="app-entry-desc">Vertical architecture prototype demonstrating multi-level structures.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Architectural and Urban Modeling/Vertical building/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Architectural and Urban Modeling/Vertical building_fm.JPG.png" alt="Vertical Building">
+                                    <p class="app-entry-title">Vertical Building</p>
+                                    <p class="app-entry-desc">Exploration of flat typographic footprints transformed into tall, legible vertical forms through controlled expansion and stacking.</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -106,46 +117,58 @@
                     <h3 class="app-subsubtitle">Product Design Prototypes</h3>
                     <div class="app-grid">
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Audio Player_fm.png" alt="Audio Player">
-                                <p class="app-entry-title">Audio Player</p>
-                                <p class="app-entry-desc">Product design prototype for an audio player device.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Product Design Prototypes/Audio Player/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Audio Player_fm.png" alt="Audio Player">
+                                    <p class="app-entry-title">Audio Player</p>
+                                    <p class="app-entry-desc">Compact audio player enclosure for hand-sized electronic product prototyping, testing body volume and surface transitions.</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Game console_fm.png" alt="Game Console">
-                                <p class="app-entry-title">Game Console</p>
-                                <p class="app-entry-desc">Rapid prototype of a handheld gaming console.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Product Design Prototypes/Game Console/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Game console_fm.png" alt="Game Console">
+                                    <p class="app-entry-title">Game Console</p>
+                                    <p class="app-entry-desc">Handheld entertainment hardware prototype emphasizing massing, interaction zones, and balance between tactile contact and volumetric presence.</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Knob switch_fm.png" alt="Knob Switch">
-                                <p class="app-entry-title">Knob Switch</p>
-                                <p class="app-entry-desc">Tactile control interface prototype with rotary knob design.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Product Design Prototypes/Knob Switch/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Knob switch_fm.png" alt="Knob Switch">
+                                    <p class="app-entry-title">Knob Switch</p>
+                                    <p class="app-entry-desc">Rotary interaction components as rapidly fabricated tactile controls, evaluating grip and rotational affordance.</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Microphone_fm.png" alt="Microphone">
-                                <p class="app-entry-title">Microphone</p>
-                                <p class="app-entry-desc">Microphone prototype with ergonomic grip design.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Product Design Prototypes/Microphone/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Microphone_fm.png" alt="Microphone">
+                                    <p class="app-entry-title">Microphone</p>
+                                    <p class="app-entry-desc">Microphone-like handheld object with distinct head-and-handle geometry for evaluating grasp and silhouette recognition.</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Radio_fm.png" alt="Radio">
-                                <p class="app-entry-title">Radio</p>
-                                <p class="app-entry-desc">Retro-style radio prototype with speaker grille pattern.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Product Design Prototypes/Radio/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Radio_fm.png" alt="Radio">
+                                    <p class="app-entry-title">Radio</p>
+                                    <p class="app-entry-desc">Compact radio form factors studying front-facing interface composition and enclosure proportioning.</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="app-entry">
-                            <div class="app-card">
-                                <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Speaker_fm.png" alt="Speaker">
-                                <p class="app-entry-title">Speaker</p>
-                                <p class="app-entry-desc">Portable speaker prototype with acoustic chamber design.</p>
-                            </div>
+                            <a href="../appExamples/1.Rapid Prototyping/Product Design Prototypes/Speaker/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/1.Rapid Prototyping/Product Design Prototypes/Speaker_fm.png" alt="Speaker">
+                                    <p class="app-entry-title">Speaker</p>
+                                    <p class="app-entry-desc">Volumetric audio products and interlocking storage packaging studies with self-locking assembly.</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -154,55 +177,54 @@
             <!-- 2. Sustainable and Logistics-Oriented Uses -->
             <section class="app-section">
                 <h2 class="app-subtitle">Sustainable and Logistics-Oriented Uses</h2>
-                <div class="app-grid">
-                    <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/2.Sustainable and Logistics-Oriented Uses/Aquatic Habitat/fm_Rectangle 115.png" alt="Aquatic Habitat">
-                            <p class="app-entry-title">Aquatic Habitat</p>
-                            <p class="app-entry-desc">Sustainable aquatic habitat design for hermit crabs and marine life.</p>
+                <p class="category-desc">lasermorph combines volumetric transformation with biodegradability, transport compression, and low-burden deployment. The value of this category lies not only in the generated form, but in the complete lifecycle of the object: flat-packed distribution, low-energy activation, lightweight handling, and reduced environmental burden after use. Because the material can be carried compactly and activated when needed, this category is especially relevant for outdoor events, ecological installations, disposable-yet-degradable products, and mobile systems with strict logistical constraints.</p>
+                
+                <div class="app-category">
+                    <div class="app-grid">
+                        <div class="app-entry">
+                            <a href="../appExamples/2.Sustainable and Logistics-Oriented Uses/Aquatic Habitat/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/2.Sustainable and Logistics-Oriented Uses/Aquatic Habitat/fm_Rectangle 115.png" alt="Aquatic Habitat">
+                                    <p class="app-entry-title">Aquatic Habitat</p>
+                                    <p class="app-entry-desc">Biodegradable micro-habitats for aquatic species such as hermit crabs, creating environments that regulate humidity and provide concealment.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="app-entry">
+                            <a href="../appExamples/2.Sustainable and Logistics-Oriented Uses/Enhanced Everyday Objects/index.html">
+                                <div class="app-card">
+                                    <img src="../../resources/img/3.Enhanced Everyday Objects/3D Bath Sponge/image 66.png" alt="Enhanced Everyday Objects">
+                                    <p class="app-entry-title">Enhanced Everyday Objects</p>
+                                    <p class="app-entry-desc">Everyday-object augmentations adding protection, reversibility, and material intelligence including bath sponges, scrubbers, and packaging.</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 3. Enhanced Everyday Objects -->
+            <!-- 3. Expressive Modular Graphic Prototyping -->
             <section class="app-section">
-                <h2 class="app-subtitle">Enhanced Everyday Objects</h2>
+                <h2 class="app-subtitle">Expressive Modular Graphic Prototyping</h2>
+                <p class="category-desc">lasermorph is used here as a medium for visual communication and tactile expression rather than only as a functional form-making process. These studies examine how transformable relief, modular assembly, and spatialized graphics can enrich posters, souvenirs, and symbolic objects. The resulting artifacts exist between graphic design, product prototyping, and exhibition media, making them especially useful in scenarios where an image is expected to generate attention through transformation rather than through static display alone. What unifies this category is the shift from static representation to activated representation. Graphics are no longer only looked at; they are unfolded, hydrated, assembled, and touched. This introduces time, surprise, and participation into what would otherwise remain a flat communication surface.</p>
                 <div class="app-grid">
                     <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/3.Enhanced Everyday Objects/3D Bath Sponge/image 66.png" alt="3D Bath Sponge">
-                            <p class="app-entry-title">3D Bath Sponge</p>
-                            <p class="app-entry-desc">Enhanced everyday sponge with 3D structure for better grip and cleaning.</p>
-                        </div>
+                        <a href="../appExamples/3.Expressive Modular Graphic Prototyping/Tactile Postcards/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/3.Enhanced Everyday Objects/Tactile Postcards/image 65.png" alt="Tactile Postcards">
+                                <p class="app-entry-title">Tactile Postcard</p>
+                                <p class="app-entry-desc">Dimensional reduction of 3D souvenirs into flat, mailable artifacts that reveal topographic relief after hydration.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/3.Enhanced Everyday Objects/Dual-texture Scrubber/image 65.png" alt="Dual-texture Scrubber">
-                            <p class="app-entry-title">Dual-texture Scrubber</p>
-                            <p class="app-entry-desc">Kitchen scrubber with dual surface textures for versatile cleaning.</p>
-                        </div>
-                    </div>
-                    <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/3.Enhanced Everyday Objects/Expressive_Modular Graphic Prototyping/image 70.png" alt="Expressive Modular Graphic Prototyping">
-                            <p class="app-entry-title">Expressive Modular Graphic</p>
-                            <p class="app-entry-desc">Modular graphic prototyping system for creative expression.</p>
-                        </div>
-                    </div>
-                    <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/3.Enhanced Everyday Objects/Tactile Postcards/image 65.png" alt="Tactile Postcards">
-                            <p class="app-entry-title">Tactile Postcards</p>
-                            <p class="app-entry-desc">3D embossed postcards providing tactile visual experiences.</p>
-                        </div>
-                    </div>
-                    <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/3.Enhanced Everyday Objects/Wrist Rest/image 72.png" alt="Wrist Rest">
-                            <p class="app-entry-title">Wrist Rest</p>
-                            <p class="app-entry-desc">Ergonomic wrist rest with contoured surface for comfortable typing.</p>
-                        </div>
+                        <a href="../appExamples/3.Expressive Modular Graphic Prototyping/Wrist Rest/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/3.Enhanced Everyday Objects/Wrist Rest/image 72.png" alt="Wrist Rest">
+                                <p class="app-entry-title">Wrist Rest</p>
+                                <p class="app-entry-desc">Desktop ergonomic prototype for evaluating wrist support, height transition, and front-edge slope through continuous curvature.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -210,34 +232,43 @@
             <!-- 4. Tangible Interaction Interfaces -->
             <section class="app-section">
                 <h2 class="app-subtitle">Tangible Interaction Interfaces</h2>
+                <p class="category-desc">lasermorph is used here as an interaction substrate rather than only a fabrication medium. The cases in this section demonstrate how softness, expansion, engraved stiffness, and environmental responsiveness can directly shape use, perception, and feedback. Instead of relying only on rigid electronics-first logic, these interfaces build meaning through material behavior itself, allowing form, touch, and context to participate in the interaction loop. This section shows that interaction can be distributed across geometry, material, and environmental trigger rather than concentrated only in sensors or screens.</p>
                 <div class="app-grid">
                     <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/4.Tangible interaction interfaces/Customizable Game Peripherals/fm_image 77.png" alt="Customizable Game Peripherals">
-                            <p class="app-entry-title">Customizable Game Peripherals</p>
-                            <p class="app-entry-desc">Modular game controller components for personalized gaming setups.</p>
-                        </div>
+                        <a href="../appExamples/4.Tangible interaction interfaces/Customizable Game Peripherals/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/4.Tangible interaction interfaces/Customizable Game Peripherals/fm_image 77.png" alt="Customizable Game Peripherals">
+                                <p class="app-entry-title">Customizable Game Peripherals</p>
+                                <p class="app-entry-desc">Bio-based game controller combining compliant material behavior with modular component organization for personalized gaming setups.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/4.Tangible interaction interfaces/Lampshade/fm_image 83.png" alt="Lampshade">
-                            <p class="app-entry-title">Lampshade</p>
-                            <p class="app-entry-desc">Translucent lampshade with dynamic light patterns.</p>
-                        </div>
+                        <a href="../appExamples/4.Tangible interaction interfaces/Lampshade/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/4.Tangible interaction interfaces/Lampshade/fm_image 83.png" alt="Lampshade">
+                                <p class="app-entry-title">Lampshade</p>
+                                <p class="app-entry-desc">Light diffusion shaped through density-coded translucent cellulose structures, combining lightweight transport with programmable translucency.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/4.Tangible interaction interfaces/Multimodal Haptic Instruments/fm_image 84.png" alt="Multimodal Haptic Instruments">
-                            <p class="app-entry-title">Multimodal Haptic Instruments</p>
-                            <p class="app-entry-desc">Tangible interfaces providing multimodal haptic feedback for music.</p>
-                        </div>
+                        <a href="../appExamples/4.Tangible interaction interfaces/Multimodal Haptic Instruments/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/4.Tangible interaction interfaces/Multimodal Haptic Instruments/fm_image 84.png" alt="Multimodal Haptic Instruments">
+                                <p class="app-entry-title">Multimodal Haptic Instruments</p>
+                                <p class="app-entry-desc">Musical structure translated into tactile interaction using laser-coded stiffness, creating closed loops between touch, sound, and image.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="app-entry">
-                        <div class="app-card">
-                            <img src="../../resources/img/4.Tangible interaction interfaces/Rain-Triggered Urban Interfaces/fm_image 71.png" alt="Rain-Triggered Urban Interfaces">
-                            <p class="app-entry-title">Rain-Triggered Urban Interfaces</p>
-                            <p class="app-entry-desc">Environmental responsive surfaces that activate with rain water.</p>
-                        </div>
+                        <a href="../appExamples/4.Tangible interaction interfaces/Rain-Triggered Urban Interfaces/index.html">
+                            <div class="app-card">
+                                <img src="../../resources/img/4.Tangible interaction interfaces/Rain-Triggered Urban Interfaces/fm_image 71.png" alt="Rain-Triggered Urban Interfaces">
+                                <p class="app-entry-title">Rain-Triggered Urban Interfaces</p>
+                                <p class="app-entry-desc">Context-aware public signage that remains visually quiet in dry conditions and becomes legible only when activated by rain or water.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
