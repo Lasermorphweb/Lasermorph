@@ -1,0 +1,24 @@
+{
+  version: 2,
+  mediaFileName: '新12.mp4',
+  cutSegments: [
+    {
+      start: 5.268590277777778,
+      end: 6.146688657407407,
+      name: 'calibration',
+      selected: true,
+    },
+    {
+      start: 17.623044,
+      end: 21.145635,
+      name: 'calibration',
+      selected: true,
+    },
+    {
+      start: 54.762391,
+      end: 57.543205,
+      name: 'freedesign',
+      selected: true,
+    },
+  ],
+}
