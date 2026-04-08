@@ -26,9 +26,12 @@
         .divToggleContent { display: none; padding: 1rem 0; }
         .img-row { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
         .img-row > div { flex: 1; min-width: 280px; }
-        .img-row img { width: 100%; border-radius: 12px; }
+        .img-row img, .img-row video { width: 100%; border-radius: 12px; }
         .img-caption { font-size: 0.85rem; color: rgba(3,3,3,0.6); margin-top: 5px; text-align: center; }
         .content-img { width: 100%; border-radius: 12px; margin-top: 10px; }
+        .content-video { width: 100%; border-radius: 12px; margin-top: 10px; }
+        .video-container { display: flex; flex-direction: column; align-items: center; margin-top: 15px; }
+        .video-container video { width: 100%; border-radius: 12px; }
         .topbar { position: sticky; top: 0; z-index: 100; background: rgba(253, 253, 253, 0.92); border-bottom: 1px solid rgba(3, 3, 3, 0.15); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
         .topbar-inner { margin: 0 6rem; padding: 1rem 0; display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; }
         .topbar-brand { font-family: 'DM Serif Display', serif; color: #030303; font-size: 1.5rem; text-decoration: none; }
@@ -58,11 +61,21 @@
             
             <h4>Rate Power & Cutting Speed</h4>
             <p>Input the machine's power percentage and speed to calculate the thickness of each cut.</p>
-            <img class="content-img" src="../../resources/img/designtool/1-calibration_ratepower.png" alt="Rate Power Settings">
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline>
+                    <source src="../../resources/gif_designtool/web_video/calibration_Step_1_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Set power and speed parameters</p>
+            </div>
             
             <h4>Export Calibration Model</h4>
             <p>Generate and export the calibration model as DXF or G-code files for test cuts.</p>
-            <img class="content-img" src="../../resources/img/designtool/1-calibration_export.png" alt="Export Calibration Model">
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline>
+                    <source src="../../resources/gif_designtool/web_video/calibration_Step_2_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Export calibration files</p>
+            </div>
         </div>
     </div>
 
@@ -77,46 +90,36 @@
             <h3>2.1 Single-Sided Cutting</h3>
             <p>Import the model and generate cutting paths for the front side. Preview the model's dry and wet state effects.</p>
             
-            <h4>Import Model</h4>
-            <img class="content-img" src="../../resources/img/designtool/2-1-free-design_importmodel.png" alt="Import Model">
-            
-            <h4>Cutting Mode Selection</h4>
-            <img class="content-img" src="../../resources/img/designtool/2-1-free-design_cuttingmode.png" alt="Cutting Mode">
-            
-            <h4>Rate Power & Cutting Speed</h4>
-            <img class="content-img" src="../../resources/img/designtool/2-1-free-design_ratedpowercuttingspeed.png" alt="Rate Power and Cutting Speed">
-            
-            <h4>Preview Dry & Wet States</h4>
-            <div class="img-row">
-                <div><img src="../../resources/img/designtool/2-1-free-design_previewdry.png" alt="Preview Dry State"><p class="img-caption">Dry State Preview</p></div>
-                <div><img src="../../resources/img/designtool/2-1-free-design_previewwet.png" alt="Preview Wet State"><p class="img-caption">Wet State Preview</p></div>
+            <h4>Import & Configure</h4>
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline>
+                    <source src="../../resources/gif_designtool/web_video/freedesign_Step_3_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Import model and select cutting mode</p>
             </div>
             
-            <h4>Export DXF & G-code</h4>
-            <div class="img-row">
-                <div><img src="../../resources/img/designtool/2-1-free-design_exportdxf.png" alt="Export DXF"><p class="img-caption">Export as DXF</p></div>
-                <div><img src="../../resources/img/designtool/2-1-free-design_exportgcode.png" alt="Export G-code"><p class="img-caption">Export as G-code</p></div>
-            </div>
-
-            <h3>2.2 Double-Sided Cutting</h3>
-            <p>Split the model into the front and back parts. Generate cutting paths for both sides.</p>
-            
-            <h4>Import Model</h4>
-            <img class="content-img" src="../../resources/img/designtool/2-2-free-design_import.png" alt="Import Model for Double-Sided">
-            
-            <h4>Generate Cutting Path</h4>
-            <img class="content-img" src="../../resources/img/designtool/2-2-free-design_generatepath.png" alt="Generate Cutting Path">
-            
-            <h4>Preview Dry & Wet States</h4>
-            <div class="img-row">
-                <div><img src="../../resources/img/designtool/2-2-free-design_previewdry.png" alt="Preview Dry State"><p class="img-caption">Dry State Preview</p></div>
-                <div><img src="../../resources/img/designtool/2-2-free-design_previewwet.png" alt="Preview Wet State"><p class="img-caption">Wet State Preview</p></div>
+            <h4>Set Parameters</h4>
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline>
+                    <source src="../../resources/gif_designtool/web_video/freedesign_Step_4_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Configure power and speed settings</p>
             </div>
             
-            <h4>Export DXF & G-code</h4>
-            <div class="img-row">
-                <div><img src="../../resources/img/designtool/2-2-free-design_exportdxf.png" alt="Export DXF"><p class="img-caption">Export as DXF</p></div>
-                <div><img src="../../resources/img/designtool/2-2-free-design_exportgcode.png" alt="Export G-code"><p class="img-caption">Export as G-code</p></div>
+            <h4>Preview States</h4>
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline>
+                    <source src="../../resources/gif_designtool/web_video/freedesign_Step_5_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Preview dry and wet states</p>
+            </div>
+            
+            <h4>Export Files</h4>
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline>
+                    <source src="../../resources/gif_designtool/web_video/freedesign_Step_6_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Export as DXF or G-code</p>
             </div>
         </div>
     </div>
@@ -132,56 +135,223 @@
             <h3>3.1 Letter Arrangement</h3>
             <p>Users can input the desired letters, numbers, or simple shapes and adjust their size.</p>
             
-            <h4>Single & Multiple Input</h4>
+            <h4>Input Mode Selection</h4>
             <div class="img-row">
-                <div><img src="../../resources/img/designtool/3-1-creative-tools_singleselect.png" alt="Single Select"><p class="img-caption">Single Select Mode</p></div>
-                <div><img src="../../resources/img/designtool/3-1-creative-tools_multipleinput.png" alt="Multiple Input"><p class="img-caption">Multiple Input Mode</p></div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_1_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Single character input</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_2_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Multiple characters input</p>
+                </div>
             </div>
             
-            <h4>Generate Path & Export</h4>
+            <h4>Generate & Export</h4>
             <div class="img-row">
-                <div><img src="../../resources/img/designtool/3-1-creative-tools_generatepath.png" alt="Generate Path"><p class="img-caption">Generate Cutting Path</p></div>
-                <div><img src="../../resources/img/designtool/3-1-creative-tools_exportdxf.png" alt="Export DXF"><p class="img-caption">Export as DXF</p></div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_3_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Generate cutting path</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_4_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export design files</p>
+                </div>
             </div>
-            <img class="content-img" src="../../resources/img/designtool/3-1-creative-tools_exportgcode.png" alt="Export G-code" style="max-width: 48%;">
 
             <h3>3.2 Seaweed</h3>
             <p>Adjust the number of seaweed strands in the X and Y directions, height, overall size, and other parameters.</p>
             
-            <h4>Parameter Tuning</h4>
-            <img class="content-img" src="../../resources/img/designtool/3-2-creative-tools_parametertuning.png" alt="Parameter Tuning">
+            <h4>Parameter Configuration</h4>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_5_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Set strand count</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_6_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Adjust dimensions</p>
+                </div>
+            </div>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_7_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Configure height</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_8_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Set power and speed</p>
+                </div>
+            </div>
             
-            <h4>Rate Power & Cutting Speed</h4>
-            <img class="content-img" src="../../resources/img/designtool/3-2-creative-tools_ratepowercuttingspeed.png" alt="Rate Power and Cutting Speed">
-            
-            <h4>Generate Path</h4>
-            <img class="content-img" src="../../resources/img/designtool/3-2-creative-tools_generatepath.png" alt="Generate Path">
+            <h4>Generate & Export</h4>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_9_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Generate path</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_10_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Preview result</p>
+                </div>
+            </div>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_11_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export DXF</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_12_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export G-code</p>
+                </div>
+            </div>
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline style="max-width: 48%;">
+                    <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_13_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Final export options</p>
+            </div>
 
             <h3>3.3 City</h3>
             <p>Import a curve from a file, then define the maximum and minimum heights of city elements.</p>
             
-            <h4>Parameter Tuning</h4>
-            <img class="content-img" src="../../resources/img/designtool/3-3-creative-tools_parametertuning.png" alt="City Parameter Tuning">
+            <h4>City Model Creation</h4>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_14_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Import curve file</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_15_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Set height range</p>
+                </div>
+            </div>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_16_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Generate city model</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_17_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export result</p>
+                </div>
+            </div>
 
             <h3>3.4 Expansion Module</h3>
             <p>Customize the zigzag pattern for horizontal expansion and adjust parameters for vertical expansion.</p>
             
-            <h4>Expression Mode & Position</h4>
+            <h4>Expression Settings</h4>
             <div class="img-row">
-                <div><img src="../../resources/img/designtool/3-4-creative-tools_expressionmode.png" alt="Expression Mode"><p class="img-caption">Expression Mode</p></div>
-                <div><img src="../../resources/img/designtool/3-4-creative-tools_expressionposition.png" alt="Expression Position"><p class="img-caption">Expression Position</p></div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_1_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Select expression mode</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_2_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Set expression position</p>
+                </div>
             </div>
             
-            <h4>Parameter Tuning</h4>
+            <h4>Pattern Configuration</h4>
             <div class="img-row">
-                <div><img src="../../resources/img/designtool/3-4-creative-tools_parametertuning.png" alt="Parameter Tuning 1"><p class="img-caption">Parameter Settings 1</p></div>
-                <div><img src="../../resources/img/designtool/3-4-creative-tools_parametertuning1.png" alt="Parameter Tuning 2"><p class="img-caption">Parameter Settings 2</p></div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_3_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Configure zigzag pattern</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_4_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Adjust expansion parameters</p>
+                </div>
+            </div>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_5_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Set horizontal expansion</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_6_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Set vertical expansion</p>
+                </div>
             </div>
             
-            <h4>Generate Path & Export</h4>
+            <h4>Generate & Export</h4>
             <div class="img-row">
-                <div><img src="../../resources/img/designtool/3-4-creative-tools_generatepath.png" alt="Generate Path"><p class="img-caption">Generate Cutting Path</p></div>
-                <div><img src="../../resources/img/designtool/3-4-creative-tools_export.png" alt="Export"><p class="img-caption">Export Options</p></div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_7_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Generate cutting path</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_8_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Preview result</p>
+                </div>
+            </div>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_9_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export DXF</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_10_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export G-code</p>
+                </div>
+            </div>
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline style="max-width: 48%;">
+                    <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_11_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Final output</p>
             </div>
         </div>
     </div>
@@ -194,21 +364,100 @@
         <div class="divToggleContent">
             <p>The Case Restoration module includes a selection of classic pre-designed models that users can reference or use directly: Car, Rabbit, Wrist Rest, and UIST Cube.</p>
             
-            <h4>Select Model</h4>
-            <img class="content-img" src="../../resources/img/designtool/4-case-restoration_1.png" alt="Select Model">
-            
-            <h4>Generate Path</h4>
-            <img class="content-img" src="../../resources/img/designtool/4-case-restoration_generatepath.png" alt="Generate Path">
-            
-            <h4>Preview Models</h4>
-            <img class="content-img" src="../../resources/img/designtool/4-case-restoration_preview_1.png" alt="Preview 1">
+            <h4>Vehicle Model</h4>
             <div class="img-row">
-                <div><img src="../../resources/img/designtool/4-case-restoration_preview2.png" alt="Preview 2"><p class="img-caption">Preview Model</p></div>
-                <div><img src="../../resources/img/designtool/4-case-restoration_preview2_selectmode.png" alt="Preview 2 Select Mode"><p class="img-caption">Select Mode</p></div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_vehicle_Step_1_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Select vehicle model</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_vehicle_Step_2_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Generate and export</p>
+                </div>
+            </div>
+            
+            <h4>Rabbit Model</h4>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_3_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Select rabbit model</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_4_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Configure parameters</p>
+                </div>
             </div>
             <div class="img-row">
-                <div><img src="../../resources/img/designtool/4-case-restoration_preview3.png" alt="Preview 3"><p class="img-caption">Preview Different Models</p></div>
-                <div><img src="../../resources/img/designtool/4-case-restoration_preview4_selectmode.png" alt="Preview 4 Select Mode"><p class="img-caption">Model Selection</p></div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_5_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Generate path</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_6_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export files</p>
+                </div>
+            </div>
+            
+            <h4>UIST Cube Model</h4>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_1_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Select UIST cube</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_2_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Configure settings</p>
+                </div>
+            </div>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_3_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Set power and speed</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_4_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Generate cutting path</p>
+                </div>
+            </div>
+            <div class="img-row">
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_5_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Preview model</p>
+                </div>
+                <div>
+                    <video autoplay loop muted playsinline>
+                        <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_6_web.mp4" type="video/mp4">
+                    </video>
+                    <p class="img-caption">Export DXF</p>
+                </div>
+            </div>
+            <div class="video-container">
+                <video class="content-video" autoplay loop muted playsinline style="max-width: 48%;">
+                    <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_7_web.mp4" type="video/mp4">
+                </video>
+                <p class="img-caption">Export G-code</p>
             </div>
         </div>
     </div>
