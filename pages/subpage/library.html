@@ -84,15 +84,30 @@
             if (content.style.display === 'none') {
                 content.style.display = 'flex';
                 icon.src = '../../resources/img/icons/lessIcon.png';
-                // State not persisted - reset on page reload
+                localStorage.setItem(key, 'true');
             } else {
                 content.style.display = 'none';
                 icon.src = '../../resources/img/icons/moreIcon.png';
-                // State not persisted - reset on page reload
+                localStorage.setItem(key, 'false');
             }
         }
 
-        // Default all sections collapsed - no state restoration
+        // Restore expanded states from localStorage on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.divHeader').forEach(header => {
+                const key = getSectionKey(header);
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.moreLessIcon');
+                const isExpanded = localStorage.getItem(key);
+                if (isExpanded === 'true') {
+                    content.style.display = 'flex';
+                    icon.src = '../../resources/img/icons/lessIcon.png';
+                } else {
+                    content.style.display = 'none';
+                    icon.src = '../../resources/img/icons/moreIcon.png';
+                }
+            });
+        });
     </script>
 </body>
 </html>
