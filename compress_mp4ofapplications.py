@@ -3,7 +3,7 @@ from pathlib import Path
 
 # ================= 配置区 =================
 # 你的目标视频主文件夹路径
-TARGET_DIR = Path("/Users/heshan3/Documents/Sponge/resources/application_video")
+TARGET_DIR = Path("/Users/heshan3/Documents/Sponge/resources/designspace_morphing")
 
 # ================= 逻辑区 =================
 def main():
