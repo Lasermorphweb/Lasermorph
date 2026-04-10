@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <script src="../../js/lazy-load.js"></script>
     <style>
         html, body { background-color: #fdfdfd; font-size: calc(1728vw / 1728); }
         h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; color: #030303; margin: 0; }
@@ -54,7 +55,7 @@
     <div class="divToggle">
         <div class="divHeader" onclick="detailItem(this)">
             <h2>1. Calibration</h2>
-            <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
+            <img loading="lazy" class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
         </div>
         <div class="divToggleContent">
             <p>The Calibration module allows users to set up their laser cutter and ensure that the material is cut accurately. Users can select the power of their machine (e.g., 20W or 10W), and the system will recommend cutting speed and power percentage.</p>
@@ -62,7 +63,7 @@
             <h4>Rate Power & Cutting Speed</h4>
             <p>Input the machine's power percentage and speed to calculate the thickness of each cut.</p>
             <div class="video-container">
-                <video class="content-video" autoplay loop muted playsinline>
+                <video preload="none" class="content-video" autoplay loop muted playsinline>
                     <source src="../../resources/gif_designtool/web_video/calibration_Step_1_web.mp4" type="video/mp4">
                 </video>
                 <p class="img-caption">Set power and speed parameters</p>
@@ -71,7 +72,7 @@
             <h4>Export Calibration Model</h4>
             <p>Generate and export the calibration model as DXF or G-code files for test cuts.</p>
             <div class="video-container">
-                <video class="content-video" autoplay loop muted playsinline>
+                <video preload="none" class="content-video" autoplay loop muted playsinline>
                     <source src="../../resources/gif_designtool/web_video/calibration_Step_2_web.mp4" type="video/mp4">
                 </video>
                 <p class="img-caption">Calculate depth of cut</p>
@@ -82,7 +83,7 @@
     <div class="divToggle">
         <div class="divHeader" onclick="detailItem(this)">
             <h2>2. Free Design</h2>
-            <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
+            <img loading="lazy" class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
         </div>
         <div class="divToggleContent">
             <p>The Free Design module provides users the flexibility to import their own models and generate cutting paths. The module supports various cutting modes, including single-sided and double-sided cutting.</p>
@@ -92,7 +93,7 @@
             
             <h4>Preview State</h4>
             <div class="video-container">
-                <video class="content-video" autoplay loop muted playsinline>
+                <video preload="none" class="content-video" autoplay loop muted playsinline>
                     <source src="../../resources/gif_designtool/web_video/freedesign_Step_3_web.mp4" type="video/mp4">
                 </video>
                 <p class="img-caption">Switch between dry and wet states</p>
@@ -100,7 +101,7 @@
             
             <h4>Set Parameters</h4>
             <div class="video-container">
-                <video class="content-video" autoplay loop muted playsinline>
+                <video preload="none" class="content-video" autoplay loop muted playsinline>
                     <source src="../../resources/gif_designtool/web_video/freedesign_Step_4_web.mp4" type="video/mp4">
                 </video>
                 <p class="img-caption">Configure power and speed settings</p>
@@ -108,7 +109,7 @@
             
             <h4>Preview States</h4>
             <div class="video-container">
-                <video class="content-video" autoplay loop muted playsinline>
+                <video preload="none" class="content-video" autoplay loop muted playsinline>
                     <source src="../../resources/gif_designtool/web_video/freedesign_Step_5_web.mp4" type="video/mp4">
                 </video>
                 <p class="img-caption">Preview dry and wet states</p>
@@ -116,7 +117,7 @@
             
             <h4>Change Generate Mode of Double Sides</h4>
             <div class="video-container">
-                <video class="content-video" autoplay loop muted playsinline>
+                <video preload="none" class="content-video" autoplay loop muted playsinline>
                     <source src="../../resources/gif_designtool/web_video/freedesign_Step_6_web.mp4" type="video/mp4">
                 </video>
                 <p class="img-caption">Switch between different generation modes for double-sided designs</p>
@@ -127,7 +128,7 @@
     <div class="divToggle">
         <div class="divHeader" onclick="detailItem(this)">
             <h2>3. Creative Tools</h2>
-            <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
+            <img loading="lazy" class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
         </div>
         <div class="divToggleContent">
             <p>The Creative Tools module offers four parametric design cases that allow users to create custom models by adjusting various parameters.</p>
@@ -138,13 +139,13 @@
             <h4>Input Mode Selection</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_1_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Single character input</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_2_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust character size</p>
@@ -154,13 +155,13 @@
             <h4>Preview & Generate</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_3_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview state</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_alphanumeric_Step_4_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Generate path</p>
@@ -173,13 +174,13 @@
             <h4>Parameter Configuration</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_5_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust size</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_6_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust number of item (x axis)</p>
@@ -187,13 +188,13 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_7_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust number of item (y axis)</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_8_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change random seed</p>
@@ -203,13 +204,13 @@
             <h4>Parameter Adjustment</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_9_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust base gap level</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_10_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust total height</p>
@@ -217,13 +218,13 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_11_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust bottom height</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_aquaticplants_Step_12_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview state</p>
@@ -236,13 +237,13 @@
             <h4>City Model Creation</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_14_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust min height</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_15_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust max height</p>
@@ -250,13 +251,13 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_16_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust random seed</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_city_Step_17_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview state</p>
@@ -269,13 +270,13 @@
             <h4>Expression Settings</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_1_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust object size</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_2_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust total height</p>
@@ -285,13 +286,13 @@
             <h4>Pattern Configuration</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_3_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Select expression position</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_4_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Generate path</p>
@@ -299,13 +300,13 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_5_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Switch expression mode</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_6_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust object size</p>
@@ -315,13 +316,13 @@
             <h4>Generate & Export</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_7_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust number of item (x axis)</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_8_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust number of item (y axis)</p>
@@ -329,20 +330,20 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_9_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust convex height</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_10_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Adjust bottom height</p>
                 </div>
             </div>
             <div class="video-container">
-                <video class="content-video" autoplay loop muted playsinline style="max-width: 48%;">
+                <video preload="none" class="content-video" autoplay loop muted playsinline style="max-width: 48%;">
                     <source src="../../resources/gif_designtool/web_video/creativewidget_expansion_Step_11_web.mp4" type="video/mp4">
                 </video>
                 <p class="img-caption">Change preview state</p>
@@ -353,7 +354,7 @@
     <div class="divToggle">
         <div class="divHeader" onclick="detailItem(this)">
             <h2>4. Case Restoration</h2>
-            <img class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
+            <img loading="lazy" class="moreLessIcon" src="../../resources/img/icons/moreIcon.png" alt="Toggle">
         </div>
         <div class="divToggleContent">
             <p>The Case Restoration module includes a selection of classic pre-designed models that users can reference or use directly: Car, Rabbit, Wrist Rest, and UIST Cube.</p>
@@ -361,13 +362,13 @@
             <h4>Vehicle Model</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_vehicle_Step_1_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview state</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_vehicle_Step_2_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Generate path</p>
@@ -378,13 +379,13 @@
             <h4>Rabbit Model</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_3_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview mode</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_4_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Switch preview state</p>
@@ -392,7 +393,7 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_5_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Generate path</p>
@@ -403,7 +404,7 @@
             <h4>Wrist Rest</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_rabbit_Step_6_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Generate path</p>
@@ -413,13 +414,13 @@
             <h4>UIST Cube Model</h4>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_1_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview mode to Whole object</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_2_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview mode to Top</p>
@@ -427,13 +428,13 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_3_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview mode to Front</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_4_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview mode to Back</p>
@@ -441,13 +442,13 @@
             </div>
             <div class="img-row">
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_5_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview mode to Left</p>
                 </div>
                 <div>
-                    <video autoplay loop muted playsinline>
+                    <video preload="none" autoplay loop muted playsinline>
                         <source src="../../resources/gif_designtool/web_video/caserestoration_uist_Step_6_web.mp4" type="video/mp4">
                     </video>
                     <p class="img-caption">Change preview mode to Right</p>

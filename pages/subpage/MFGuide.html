@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <script src="../../js/lazy-load.js"></script>
     <link href="../../css/site-structure.css" rel="stylesheet">
     <style>
         html, body { background: #fdfdfd; font-size: calc(1728vw / 1728); }
@@ -30,13 +31,13 @@
     <main class="page">
         <h1 class="content" style="margin-bottom: 1.5rem;">Mechanism and Fabrication</h1>
         <p class="content" style="max-width: 58rem; margin-bottom: 2rem;">The Mechanism and Fabrication section explains the principles and processes behind LaserMorph. It is divided into four main parts: First, it describes how the system works, including the workflow, mechanism, and advantages. Then, it covers the preparation of materials, the environment, and the necessary equipment. The section continues with a detailed fabrication process, including pre-processing, calibration, laser cutting, and activation. Finally, it discusses key laser parameters and provides tips for successful fabrication, along with application examples. Each part provides a clear step-by-step guide to understanding and implementing LaserMorph.</p>
-        <div class="row mb-5"><div class="col-md-10"><video autoplay loop muted playsinline style="width: 100%; border-radius: 12px;"><source src="../../resources/designspace_morphing/morphing-Compression/morphing-Compression.mp4" type="video/mp4"></video></div></div>
+        <div class="row mb-5"><div class="col-md-10"><video preload="none" autoplay loop muted playsinline style="width: 100%; border-radius: 12px;"><source src="../../resources/designspace_morphing/morphing-Compression/morphing-Compression.mp4" type="video/mp4"></video></div></div>
 
         <h2 class="content" style="margin-bottom: 1rem;">Understand How It Works</h2>
         <p>The Understand How It Works section is organized into three key parts: Workflow, Mechanism, and Advantages. The Workflow section explains the step-by-step process of how LaserMorph operates. The Mechanism part dives into the technical principles behind the transformation from 2D to 3D forms using laser processing. Finally, the Advantages section highlights the benefits of using this method, such as its efficiency and the ability to create complex 3D shapes without the need for intricate models or molds.</p>
         
         <h3>Workflow</h3>
-        <div class="row mb-4"><div class="col-md-10"><img src="../../resources/img/workflow_neo.PNG" alt="Workflow"></div></div>
+        <div class="row mb-4"><div class="col-md-10"><img loading="lazy" src="../../resources/img/workflow_neo.PNG" alt="Workflow"></div></div>
         <p>LaserMorph establishes a closed-loop end-to-end computational manufacturing workflow, which involves four key steps: hardware and material calibration, importing or designing the model, laser engraving, and water activation. Each of these steps plays a critical role in ensuring precision, consistency, and efficient transformation of 2D to 3D forms.</p>
         <ol>
             <li><strong>Hardware and Material Calibration</strong><br>The first step involves calibrating the hardware and materials to ensure consistency across different power platforms. Users calibrate the system by processing standardized calibration pieces using a defined calibration procedure. This ensures that the parameters remain consistent, allowing for reliable results when transitioning between various laser platforms with different power settings.</li>
@@ -81,7 +82,7 @@
         <p>Before laser cutting, ensure the compressed cellulose sponge is flat, dry, and securely placed on the laser bed. Material thickness should be consistent across the working area.</p>
 
         <h3>Calibration</h3>
-        <div class="row mb-4"><div class="col-md-10"><img src="../../resources/img/Calibration.jpg" alt="Standard Test Sample"></div></div>
+        <div class="row mb-4"><div class="col-md-10"><img loading="lazy" src="../../resources/img/Calibration.jpg" alt="Standard Test Sample"></div></div>
         <p>Since fabrication results vary across laser platforms and sponge thicknesses, users first fabricate a standardized calibration sample to identify appropriate processing parameters for their setup. The calibration process includes:</p>
         <ol>
             <li><strong>Parameter Testing:</strong> Test different combinations of power (%), speed (mm/min), and line spacing to find stable processing parameters. Laser power and scan speed determine etching depth—the relationship is monotonic: depth increases with power and decreases with speed.</li>

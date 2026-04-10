@@ -21,6 +21,7 @@
 
     <script src="https://d3js.org/d3.v6.js"></script>
     <script src="./js/d3DrawIcon.js"></script>
+    <script src="./js/lazy-load.js"></script>
 
 
     <style>
@@ -235,12 +236,8 @@
             }
         }
     </style>
-    <!-- 预加载图片 -->
+    <!-- 预加载第一张图片 -->
     <link rel="preload" as="image" href="resources/img/slidescover/1U2A5947.JPG">
-    <link rel="preload" as="image" href="resources/img/slidescover/1U2A6313.JPG">
-    <link rel="preload" as="image" href="resources/img/slidescover/1U2A6415.JPG">
-    <link rel="preload" as="image" href="resources/img/slidescover/1U2A6558.JPG">
-    <link rel="preload" as="image" href="resources/img/slidescover/475d07ab-12a9-4315-8fac-d273e7f66aa5.jpeg">
     <style>
         /* 页面加载时先显示第一张图片 */
         .carousel-item:first-child img {
@@ -255,19 +252,19 @@
         <div id="bgCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; margin: 0; padding: 0;">
             <div class="carousel-inner" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
                 <div class="carousel-item active" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
-                    <img src="resources/img/slidescover/1U2A5947.JPG">
+                    <img loading="lazy" src="resources/img/slidescover/1U2A5947.JPG">
                 </div>
                 <div class="carousel-item" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
-                    <img src="resources/img/slidescover/1U2A6313.JPG">
+                    <img loading="lazy" src="resources/img/slidescover/1U2A6313.JPG">
                 </div>
                 <div class="carousel-item" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
-                    <img src="resources/img/slidescover/1U2A6415.JPG">
+                    <img loading="lazy" src="resources/img/slidescover/1U2A6415.JPG">
                 </div>
                 <div class="carousel-item" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
-                    <img src="resources/img/slidescover/1U2A6558.JPG">
+                    <img loading="lazy" src="resources/img/slidescover/1U2A6558.JPG">
                 </div>
                 <div class="carousel-item" style="width: 100%; height: 100vh; margin: 0; padding: 0;">
-                    <img src="resources/img/slidescover/475d07ab-12a9-4315-8fac-d273e7f66aa5.jpeg">
+                    <img loading="lazy" src="resources/img/slidescover/475d07ab-12a9-4315-8fac-d273e7f66aa5.jpeg">
                 </div>
             </div>
         </div>
