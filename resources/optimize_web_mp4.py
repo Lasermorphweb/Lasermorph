@@ -11,7 +11,7 @@ OUTPUT_DIR = BASE_DIR / "web_video"
 CROP_BOTTOM_PIXELS = 50
 # 2. 将视频宽度等比缩放到 1080px (如果网页不需要这么大，可以改 800)
 SCALE_WIDTH = 1080
-VF_FILTER = f"crop=in_w:in_h-{CROP_BOTTOM_PIXELS}:0:0,scale={SCALE_WIDTH}:-1"
+VF_FILTER = f"crop=in_w:in_h-{CROP_BOTTOM_PIXELS}:0:0,scale={SCALE_WIDTH}:-2"
 
 # ================= 逻辑区 =================
 def main():
@@ -28,17 +28,24 @@ def main():
         # 给新文件加上 _web 后缀以示区别
         output_path = OUTPUT_DIR / f"{video_path.stem}_web.mp4"
         
+        # ================= 新增逻辑 =================
+        # 如果输出文件夹里已经有了这个文件，就直接跳过，节省时间
+        if output_path.exists():
+            print(f"⏭️ 已存在，跳过: {video_path.name}")
+            continue
+        # ============================================
+
         cmd = [
             "ffmpeg",
             "-y",
             "-i", str(video_path),
-            "-vf", VF_FILTER,          # 应用裁剪和缩放
-            "-c:v", "libx264",         # 使用兼容性最强、压缩率极高的 H.264 编码
-            "-crf", "28",              # 压缩率控制（18-28，数字越大体积越小，28对UI录屏很完美）
-            "-preset", "slower",       # 牺牲一点点导出时间，换取更小的文件体积
-            "-pix_fmt", "yuv420p",     # 确保所有浏览器(Safari/Chrome)都能正常解析颜色
-            "-an",                     # 强制移除音频流 (省空间关键)
-            "-movflags", "+faststart", # 网页秒开魔法：允许视频边下载边播放！
+            "-vf", VF_FILTER,
+            "-c:v", "libx264",
+            "-crf", "28",
+            "-preset", "slower",
+            "-pix_fmt", "yuv420p",
+            "-an",
+            "-movflags", "+faststart",
             str(output_path)
         ]
         
